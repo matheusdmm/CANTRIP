@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#7c3aed">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="light dark">
     <title>CANTRIP — Rastreador de magias 5e</title>
     <meta name="description" content="Acompanhe slots de magia e magias 'em mãos' para D&D 5e.">
     <meta name="author" content="Matheus (matheusdmm.dev)">
@@ -23,6 +23,13 @@
     <meta name="twitter:title" content="Cantrip — Rastreador de magias 5e">
     <meta name="twitter:description" content="Acompanhe slots de magia e magias 'em mãos' para D&D 5e.">
 
+    <script>
+        (function () {
+            var t = localStorage.getItem('cantrip.theme') ||
+                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <style>
         :root {
@@ -37,11 +44,31 @@
             --accent-hover: #6d28d9;
             --accent-soft: #ede9fe;
             --accent-dim: #c4b5fd;
+            --accent-text: #ffffff;
+            --at-hand-bg: #fbfaff;
             --danger: #dc2626;
             --radius: 10px;
             --radius-sm: 6px;
             --transition: 120ms ease;
             --tap: 44px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #1b1a27;
+            --surface: #252333;
+            --surface-2: #2e2c42;
+            --border: #3d3b55;
+            --text: #e8e5f5;
+            --muted: #8b88a8;
+            --muted-2: #6a6785;
+            --accent: #ffaff3;
+            --accent-hover: #ff90e8;
+            --accent-soft: #2d1c33;
+            --accent-dim: #7a3572;
+            --accent-text: #1a0e20;
+            --at-hand-bg: #26192e;
+            --danger: #ff6b6b;
+            color-scheme: dark;
         }
 
         *,
@@ -96,15 +123,44 @@
             font-weight: 600;
             letter-spacing: -0.01em;
             margin: 0 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .theme-toggle {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--muted);
+            padding: 0;
+            min-height: auto;
+            width: 32px;
+            height: 32px;
+            border-radius: var(--radius-sm);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            flex-shrink: 0;
+            transition: color var(--transition), background var(--transition), border-color var(--transition);
+        }
+
+        .theme-toggle:hover {
+            color: var(--text);
+            background: var(--surface-2);
+            border-color: var(--border);
         }
 
         .control-row {
             display: grid;
-            grid-template-columns: 1fr auto auto;
+            grid-template-columns: 1fr auto;
             gap: 8px;
             align-items: stretch;
             margin-bottom: 8px;
         }
+
+        .level-select { display: block; width: 80px; }
+        .level-input  { display: none; }
 
         .control-row select,
         .control-row input[type="number"],
@@ -202,7 +258,7 @@
 
         button.primary {
             background: var(--accent);
-            color: #ffffff;
+            color: var(--accent-text);
             border-color: var(--accent);
             font-weight: 500;
         }
@@ -384,7 +440,7 @@
 
         .spell-card.at-hand {
             border-color: var(--accent-dim);
-            background: #fbfaff;
+            background: var(--at-hand-bg);
         }
 
         .spell-head {
@@ -634,9 +690,12 @@
             }
 
             .control-row {
-                grid-template-columns: 240px 100px auto 1fr;
+                grid-template-columns: 240px 100px 1fr;
                 align-items: end;
             }
+
+            .level-select { display: none; }
+            .level-input  { display: block; }
 
             .control-row .rest-tablet {
                 display: flex;
@@ -703,7 +762,22 @@
 
         <!-- Sticky top: class selector + level + slots -->
         <div class="sticky">
-            <h1>CANTRIP</h1>
+            <h1>
+                CANTRIP
+                <button class="theme-toggle" @click="toggleTheme()"
+                    :title="theme === 'dark' ? 'Tema claro' : 'Tema escuro'">
+                    <template x-if="theme === 'dark'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        </svg>
+                    </template>
+                    <template x-if="theme !== 'dark'">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        </svg>
+                    </template>
+                </button>
+            </h1>
 
             <div class="control-row">
                 <div>
@@ -716,11 +790,15 @@
                 </div>
                 <div>
                     <label for="lvl">Level</label>
-                    <input id="lvl" type="number" pattern="[0-9]*" min="1" max="20" x-model.number="levelInput">
-                </div>
-                <div>
-                    <label>&nbsp;</label>
-                    <button class="primary" @click="setLevel()" :disabled="!classSlug">Ok</button>
+                    <select id="lvl-sel" class="level-select" x-model.number="levelInput" @change="setLevel()">
+                        <template x-for="n in 20" :key="n">
+                            <option :value="n" x-text="n"></option>
+                        </template>
+                    </select>
+                    <input id="lvl" class="level-input" type="number" pattern="[0-9]*" min="1" max="20"
+                        x-model.number="levelInput"
+                        @change="setLevel()"
+                        @keydown.enter.prevent="setLevel()">
                 </div>
                 <div class="rest-tablet" x-show="session.level !== null">
                     <button @click="longRest()">Descanso Longo</button>
@@ -871,12 +949,14 @@
                 expanded: {},
                 toast: '',
                 toastTimer: null,
+                theme: 'light',
 
                 foldDiacritics(s) {
                     return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
                 },
 
                 async init() {
+                    this.theme = document.documentElement.getAttribute('data-theme') || 'light';
                     await this.loadClasses();
                     const savedClass = this.storageGet('cantrip.activeClass');
                     if (savedClass && this.classes.find(c => c.slug === savedClass)) {
@@ -975,6 +1055,12 @@
                 },
                 toggleExpand(spell) {
                     this.expanded = { ...this.expanded, [spell.slug]: !this.expanded[spell.slug] };
+                },
+
+                toggleTheme() {
+                    this.theme = this.theme === 'dark' ? 'light' : 'dark';
+                    document.documentElement.setAttribute('data-theme', this.theme);
+                    this.storageSet('cantrip.theme', this.theme);
                 },
 
                 flash(msg) {
