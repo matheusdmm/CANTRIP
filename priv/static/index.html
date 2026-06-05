@@ -3,8 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#f7f7f8">
-  <title>Cantrip</title>
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="color-scheme" content="light">
+  <title>Cantrip — Rastreador de magias 5e</title>
+  <meta name="description" content="Acompanhe slots de magia e magias 'em mãos' para D&D 5e.">
+  <meta name="author" content="Matheus (matheusdmm.dev)">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%276%27%20fill%3D%27%237c3aed%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27central%27%20font-family%3D%27system-ui%2CArial%27%20font-size%3D%2720%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%3EC%3C%2Ftext%3E%3C%2Fsvg%3E">
+  <link rel="apple-touch-icon" href="data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%2032%2032%27%3E%3Crect%20width%3D%2732%27%20height%3D%2732%27%20rx%3D%276%27%20fill%3D%27%237c3aed%27%2F%3E%3Ctext%20x%3D%2750%25%27%20y%3D%2750%25%27%20text-anchor%3D%27middle%27%20dominant-baseline%3D%27central%27%20font-family%3D%27system-ui%2CArial%27%20font-size%3D%2720%27%20font-weight%3D%27700%27%20fill%3D%27%23ffffff%27%3EC%3C%2Ftext%3E%3C%2Fsvg%3E">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cantrip">
+  <meta property="og:title" content="Cantrip — Rastreador de magias 5e">
+  <meta property="og:description" content="Acompanhe slots de magia e magias 'em mãos' para D&D 5e.">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Cantrip — Rastreador de magias 5e">
+  <meta name="twitter:description" content="Acompanhe slots de magia e magias 'em mãos' para D&D 5e.">
+
   <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <style>
     :root {
@@ -394,6 +409,21 @@
     }
     .bookmark.on .bookmark-dot { background: var(--accent); border-color: var(--accent); }
 
+    .footer {
+      margin-top: 32px;
+      padding: 16px 0 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .footer a:hover { text-decoration: underline; }
+
     .toast {
       position: fixed;
       bottom: 20px;
@@ -605,6 +635,11 @@
   </div>
 
   <div class="toast" x-show="toast" x-text="toast" x-transition></div>
+
+  <footer class="footer">
+    Cantrip · feito por
+    <a href="https://matheusdmm.dev" target="_blank" rel="noopener noreferrer">matheusdmm.dev</a>
+  </footer>
 </div>
 
 <script>
@@ -624,7 +659,10 @@ function app() {
 
     async init() {
       await this.loadClasses();
-      if (this.classes.length && !this.classes.find(c => c.slug === this.classSlug)) {
+      const savedClass = this.storageGet('cantrip.activeClass');
+      if (savedClass && this.classes.find(c => c.slug === savedClass)) {
+        this.classSlug = savedClass;
+      } else if (this.classes.length && !this.classes.find(c => c.slug === this.classSlug)) {
         this.classSlug = this.classes[0].slug;
       }
       await this.onClassChange();
@@ -632,7 +670,9 @@ function app() {
 
     async onClassChange() {
       this.expanded = {};
+      this.storageSet('cantrip.activeClass', this.classSlug);
       await Promise.all([this.loadClassSpells(), this.loadSession()]);
+      await this.rehydrate();
       if (this.session.level !== null) this.levelInput = this.session.level;
     },
 
@@ -657,6 +697,7 @@ function app() {
       });
       if (!r.ok) { this.flash((await r.json()).error || 'Could not set level'); return; }
       this.session = await r.json();
+      this.saveLocal();
     },
 
     async cast(spellLevel) {
@@ -667,35 +708,38 @@ function app() {
       });
       if (!r.ok) { this.flash((await r.json()).error || 'Cast failed'); return; }
       this.session = await r.json();
+      this.saveLocal();
     },
 
     async longRest() {
       const r = await fetch(`/classes/${this.classSlug}/long-rest`, { method: 'POST' });
       if (!r.ok) { this.flash((await r.json()).error || 'Long rest failed'); return; }
       this.session = await r.json();
+      this.saveLocal();
     },
     async shortRest() {
       const r = await fetch(`/classes/${this.classSlug}/short-rest`, { method: 'POST' });
       if (!r.ok) { this.flash((await r.json()).error || 'Short rest failed'); return; }
       this.session = await r.json();
+      this.saveLocal();
     },
 
     async toggleAtHand(spell) {
       if (this.isAtHand(spell)) {
         const r = await fetch(`/classes/${this.classSlug}/at-hand/${spell.slug}`, { method: 'DELETE' });
-        if (r.ok) this.session = await r.json();
+        if (r.ok) { this.session = await r.json(); this.saveLocal(); }
       } else {
         const r = await fetch(`/classes/${this.classSlug}/at-hand`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ spell_slug: spell.slug }),
         });
-        if (r.ok) this.session = await r.json();
+        if (r.ok) { this.session = await r.json(); this.saveLocal(); }
       }
     },
     async clearAtHand() {
       const r = await fetch(`/classes/${this.classSlug}/at-hand/clear`, { method: 'POST' });
-      if (r.ok) this.session = await r.json();
+      if (r.ok) { this.session = await r.json(); this.saveLocal(); }
     },
 
     isAtHand(spell) {
@@ -735,6 +779,61 @@ function app() {
         if (q && !s.name.toLowerCase().includes(q)) return false;
         return true;
       });
+    },
+
+    // Mirror session into localStorage and replay on load — server actor is in-memory only.
+    storageKey() { return `cantrip.session.${this.classSlug}`; },
+    storageGet(key) {
+      try { return localStorage.getItem(key); } catch { return null; }
+    },
+    storageSet(key, value) {
+      try { localStorage.setItem(key, value); } catch {}
+    },
+    saveLocal() {
+      if (!this.classSlug) return;
+      this.storageSet(this.storageKey(), JSON.stringify(this.session));
+    },
+    loadLocal() {
+      const raw = this.storageGet(this.storageKey());
+      if (!raw) return null;
+      try { return JSON.parse(raw); } catch { return null; }
+    },
+
+    async rehydrate() {
+      if (this.session.level !== null) return;
+      const saved = this.loadLocal();
+      if (!saved || saved.level == null) return;
+
+      const r = await fetch(`/classes/${this.classSlug}/session`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ level: saved.level }),
+      });
+      if (!r.ok) return;
+      this.session = await r.json();
+
+      for (let i = 0; i < 9; i++) {
+        const consumed = (saved.max_slots?.[i] ?? 0) - (saved.slots_remaining?.[i] ?? 0);
+        for (let n = 0; n < consumed; n++) {
+          const cr = await fetch(`/classes/${this.classSlug}/cast`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ spell_level: i + 1 }),
+          });
+          if (cr.ok) this.session = await cr.json();
+        }
+      }
+
+      for (const slug of saved.at_hand || []) {
+        const hr = await fetch(`/classes/${this.classSlug}/at-hand`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ spell_slug: slug }),
+        });
+        if (hr.ok) this.session = await hr.json();
+      }
+
+      this.saveLocal();
     },
   };
 }

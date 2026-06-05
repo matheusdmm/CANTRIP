@@ -38,17 +38,22 @@ pub fn main() -> Nil {
   let ctx = Context(spells:, sessions:, priv_dir: priv)
   let handler = handle_request(_, ctx)
 
+  let host = host_from_env()
   let port = port_from_env()
-  io.println("Listening on 0.0.0.0:" <> int.to_string(port))
+  io.println("Listening on " <> host <> ":" <> int.to_string(port))
 
   let assert Ok(_) =
     wisp_mist.handler(handler, secret_key_base)
     |> mist.new
-    |> mist.bind("0.0.0.0")
+    |> mist.bind(host)
     |> mist.port(port)
     |> mist.start
 
   process.sleep_forever()
+}
+
+fn host_from_env() -> String {
+  envoy.get("HOST") |> result.unwrap("127.0.0.1")
 }
 
 fn port_from_env() -> Int {
