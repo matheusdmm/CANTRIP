@@ -53,7 +53,8 @@ pub fn main() -> Nil {
 }
 
 fn host_from_env() -> String {
-  envoy.get("HOST") |> result.unwrap("127.0.0.1")
+  //envoy.get("HOST") |> result.unwrap("127.0.0.1") //DEV BUILD
+  envoy.get("HOST") |> result.unwrap("0.0.0.0") //PROD BUILD
 }
 
 fn port_from_env() -> Int {
