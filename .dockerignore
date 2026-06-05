@@ -1,0 +1,22 @@
+# Build artifacts (recreated in the image)
+build/
+
+# VCS
+.git/
+.gitignore
+
+# Dev-only files: 870KB HTML book + Python parser
+test/
+scripts/
+
+# Editor / OS noise
+.vscode/
+.idea/
+.DS_Store
+
+# Docs
+*.md
+
+# Local secrets (none today, but harmless)
+.env
+.env.*
