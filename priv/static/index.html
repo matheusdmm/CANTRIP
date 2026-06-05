@@ -23,6 +23,7 @@
     <meta name="twitter:title" content="Cantrip — Rastreador de magias 5e">
     <meta name="twitter:description" content="Acompanhe slots de magia e magias 'em mãos' para D&D 5e.">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script>
         (function () {
             var t = localStorage.getItem('cantrip.theme') ||
@@ -149,6 +150,24 @@
             color: var(--text);
             background: var(--surface-2);
             border-color: var(--border);
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .spinner {
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--border);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.65s linear infinite;
+            flex-shrink: 0;
+        }
+
+        .spell-card {
+            --animate-duration: 0.35s;
         }
 
         .control-row {
@@ -764,6 +783,8 @@
         <div class="sticky">
             <h1>
                 CANTRIP
+                <div style="display:flex;align-items:center;gap:8px">
+                <span class="spinner" x-show="loading" x-cloak></span>
                 <button class="theme-toggle" @click="toggleTheme()"
                     :title="theme === 'dark' ? 'Tema claro' : 'Tema escuro'">
                     <template x-if="theme === 'dark'">
@@ -777,6 +798,7 @@
                         </svg>
                     </template>
                 </button>
+                </div>
             </h1>
 
             <div class="control-row">
@@ -871,7 +893,7 @@
         <!-- Spell list -->
         <div class="spell-list">
             <template x-for="spell in filteredSpells" :key="spell.slug">
-                <div class="spell-card" :class="{ 'at-hand': isAtHand(spell), 'open': expanded[spell.slug] }">
+                <div class="spell-card animate__animated animate__fadeIn" :class="{ 'at-hand': isAtHand(spell), 'open': expanded[spell.slug] }">
                     <div class="spell-head" @click="toggleExpand(spell)">
                         <div class="spell-head-text">
                             <h3 class="spell-name" x-text="spell.name"></h3>
@@ -950,6 +972,7 @@
                 toast: '',
                 toastTimer: null,
                 theme: 'light',
+                loading: false,
 
                 foldDiacritics(s) {
                     return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -968,15 +991,21 @@
                 },
 
                 async onClassChange() {
-                    this.expanded = {};
-                    this.storageSet('cantrip.activeClass', this.classSlug);
-                    await Promise.all([this.loadClassSpells(), this.loadSession()]);
-                    await this.rehydrate();
-                    if (this.session.level !== null) {
-                        this.levelInput = this.session.level;
-                    } else {
-                        const savedLevel = this.storageGet(`cantrip.levelInput.${this.classSlug}`);
-                        if (savedLevel !== null) this.levelInput = parseInt(savedLevel, 10) || 1;
+                    this.loading = true;
+                    try {
+                        this.expanded = {};
+                        this.storageSet('cantrip.activeClass', this.classSlug);
+                        await Promise.all([this.loadClassSpells(), this.loadSession()]);
+                        await this.rehydrate();
+                        if (this.session.level !== null) {
+                            this.levelInput = this.session.level;
+                        } else {
+                            const savedLevel = this.storageGet(`cantrip.levelInput.${this.classSlug}`);
+                            if (savedLevel !== null) this.levelInput = parseInt(savedLevel, 10) || 1;
+                            await this.setLevel();
+                        }
+                    } finally {
+                        this.loading = false;
                     }
                 },
 
@@ -994,38 +1023,58 @@
                 },
 
                 async setLevel() {
-                    const r = await fetch(`/classes/${this.classSlug}/session`, {
-                        method: 'PUT',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ level: this.levelInput }),
-                    });
-                    if (!r.ok) { this.flash((await r.json()).error || 'Could not set level'); return; }
-                    this.session = await r.json();
-                    this.saveLocal();
+                    this.loading = true;
+                    try {
+                        const r = await fetch(`/classes/${this.classSlug}/session`, {
+                            method: 'PUT',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ level: this.levelInput }),
+                        });
+                        if (!r.ok) { this.flash((await r.json()).error || 'Could not set level'); return; }
+                        this.session = await r.json();
+                        this.saveLocal();
+                    } finally {
+                        this.loading = false;
+                    }
                 },
 
                 async cast(spellLevel) {
-                    const r = await fetch(`/classes/${this.classSlug}/cast`, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ spell_level: spellLevel }),
-                    });
-                    if (!r.ok) { this.flash((await r.json()).error || 'Cast failed'); return; }
-                    this.session = await r.json();
-                    this.saveLocal();
+                    this.loading = true;
+                    try {
+                        const r = await fetch(`/classes/${this.classSlug}/cast`, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ spell_level: spellLevel }),
+                        });
+                        if (!r.ok) { this.flash((await r.json()).error || 'Cast failed'); return; }
+                        this.session = await r.json();
+                        this.saveLocal();
+                    } finally {
+                        this.loading = false;
+                    }
                 },
 
                 async longRest() {
-                    const r = await fetch(`/classes/${this.classSlug}/long-rest`, { method: 'POST' });
-                    if (!r.ok) { this.flash((await r.json()).error || 'Long rest failed'); return; }
-                    this.session = await r.json();
-                    this.saveLocal();
+                    this.loading = true;
+                    try {
+                        const r = await fetch(`/classes/${this.classSlug}/long-rest`, { method: 'POST' });
+                        if (!r.ok) { this.flash((await r.json()).error || 'Long rest failed'); return; }
+                        this.session = await r.json();
+                        this.saveLocal();
+                    } finally {
+                        this.loading = false;
+                    }
                 },
                 async shortRest() {
-                    const r = await fetch(`/classes/${this.classSlug}/short-rest`, { method: 'POST' });
-                    if (!r.ok) { this.flash((await r.json()).error || 'Short rest failed'); return; }
-                    this.session = await r.json();
-                    this.saveLocal();
+                    this.loading = true;
+                    try {
+                        const r = await fetch(`/classes/${this.classSlug}/short-rest`, { method: 'POST' });
+                        if (!r.ok) { this.flash((await r.json()).error || 'Short rest failed'); return; }
+                        this.session = await r.json();
+                        this.saveLocal();
+                    } finally {
+                        this.loading = false;
+                    }
                 },
 
                 async toggleAtHand(spell) {
