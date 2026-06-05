@@ -24,6 +24,7 @@ WORKDIR /app/build/erlang-shipment
 
 # Render injects PORT; this is just a sensible local default
 ENV PORT=8080
+ENV HOST=0.0.0.0
 EXPOSE 8080
 
 CMD ["./entrypoint.sh", "run"]

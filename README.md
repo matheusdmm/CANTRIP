@@ -1,7 +1,8 @@
-# Cantrip
+# CANTRIP
 
-A D&D 5.5e spell reference and at-hand tracker for caster classes.
-Built in Gleam on the BEAM (Erlang VM); single-file Alpine.js dashboard served from the same Gleam server.
+D&D 5.5e spell reference and at-hand tracker for caster classes.
+
+Built in Gleam on the BEAM (Erlang VM). single-file Alpine.js dashboard served from the same Gleam server.
 
 ## Running locally
 
@@ -11,6 +12,8 @@ gleam test   # runs the test suite
 ```
 
 ## Regenerating the spell dataset
+
+You need to have bought the Players Hand Book in HTML OR PDF format if you need to regenerate it for some reason.
 
 `priv/spells.json` is parsed from the PHB HTML in `test/`:
 
@@ -41,4 +44,4 @@ POST   /classes/:slug/at-hand/clear                    Wipe bookmarks
 
 ## Deploy
 
-`Dockerfile` + `render.yaml` deploy to Render.com on the free tier.
+`Dockerfile` + `render.yaml` deploy to Render.com.

@@ -25,6 +25,7 @@ pub type Context {
 }
 
 pub fn main() -> Nil {
+  load_dotenv(".env")
   wisp.configure_logger()
   let secret_key_base = wisp.random_string(64)
 
@@ -54,7 +55,8 @@ pub fn main() -> Nil {
 
 fn host_from_env() -> String {
   //envoy.get("HOST") |> result.unwrap("127.0.0.1") //DEV BUILD
-  envoy.get("HOST") |> result.unwrap("0.0.0.0") //PROD BUILD
+  //envoy.get("HOST") |> result.unwrap("0.0.0.0") //PROD BUILD
+  envoy.get("HOST") |> result.unwrap("127.0.0.1") //via .env / docker ENV
 }
 
 fn port_from_env() -> Int {
@@ -360,4 +362,44 @@ fn slot_table_to_json(t: slots.SlotTable) -> json.Json {
 fn parse_level_query(query: List(#(String, String))) -> Result(Int, Nil) {
   use v <- result.try(list.key_find(query, "level"))
   int.parse(v)
+}
+
+fn load_dotenv(path: String) -> Nil {
+  case simplifile.read(path) {
+    Error(_) -> Nil
+    Ok(raw) ->
+      raw
+      |> string.split("\n")
+      |> list.each(apply_dotenv_line)
+  }
+}
+
+fn apply_dotenv_line(line: String) -> Nil {
+  let trimmed = string.trim(line)
+  case trimmed == "" || string.starts_with(trimmed, "#") {
+    True -> Nil
+    False ->
+      case string.split_once(trimmed, "=") {
+        Error(_) -> Nil
+        Ok(#(key, value)) -> {
+          let key = string.trim(key)
+          let value = strip_quotes(string.trim(value))
+          case envoy.get(key) {
+            Ok(_) -> Nil
+            Error(_) -> envoy.set(key, value)
+          }
+        }
+      }
+  }
+}
+
+fn strip_quotes(s: String) -> String {
+  let pairs = [#("\"", "\""), #("'", "'")]
+  list.fold(pairs, s, fn(acc, p) {
+    let #(open, close) = p
+    case string.starts_with(acc, open) && string.ends_with(acc, close) {
+      True -> acc |> string.drop_start(1) |> string.drop_end(1)
+      False -> acc
+    }
+  })
 }
