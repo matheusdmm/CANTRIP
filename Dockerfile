@@ -1,26 +1,26 @@
 # syntax=docker/dockerfile:1.7
+#
+# Single-stage build. Using the Gleam image as the runtime too guarantees the
+# Erlang/OTP version matches between compile and run — a previous multi-stage
+# attempt with `erlang:27-alpine` failed at boot (undef on cantrip@@main),
+# almost certainly because the Gleam image bundles a newer OTP than 27.
 
-# ----- build stage: full Gleam toolchain -----
-FROM ghcr.io/gleam-lang/gleam:v1.17.0-erlang-alpine AS build
+FROM ghcr.io/gleam-lang/gleam:v1.17.0-erlang-alpine
 
-WORKDIR /build
+WORKDIR /app
 
-# Cache deps in their own layer so source edits don't reinstall them
+# Cache deps in their own layer
 COPY gleam.toml manifest.toml ./
 RUN gleam deps download
 
-# Now bring source + runtime assets
+# Source + runtime assets
 COPY src ./src
 COPY priv ./priv
 
-# Produces /build/build/erlang-shipment/ with an entrypoint.sh
+# Builds /app/build/erlang-shipment/ with entrypoint.sh
 RUN gleam export erlang-shipment
 
-# ----- runtime stage: minimal Erlang -----
-FROM erlang:27-alpine
-
-WORKDIR /app
-COPY --from=build /build/build/erlang-shipment ./
+WORKDIR /app/build/erlang-shipment
 
 # Render injects PORT; this is just a sensible local default
 ENV PORT=8080
