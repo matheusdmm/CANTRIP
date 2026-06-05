@@ -621,7 +621,7 @@
             }
 
             h1 {
-                font-size: 18px;
+                font-size: 22px;
                 margin-bottom: 14px;
             }
 
@@ -703,7 +703,7 @@
 
         <!-- Sticky top: class selector + level + slots -->
         <div class="sticky">
-            <h1>Cantrip</h1>
+            <h1>CANTRIP</h1>
 
             <div class="control-row">
                 <div>
@@ -872,6 +872,10 @@
                 toast: '',
                 toastTimer: null,
 
+                foldDiacritics(s) {
+                    return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
+                },
+
                 async init() {
                     await this.loadClasses();
                     const savedClass = this.storageGet('cantrip.activeClass');
@@ -986,12 +990,12 @@
                         ? this.classSpells.filter(s => this.session.at_hand.includes(s.slug))
                         : this.classSpells;
 
-                    const q = this.search.trim().toLowerCase();
+                    const q = this.foldDiacritics(this.search.trim().toLowerCase());
                     const lvl = this.levelFilter === '' ? null : parseInt(this.levelFilter, 10);
 
                     return pool.filter(s => {
                         if (lvl !== null && s.level !== lvl) return false;
-                        if (q && !s.name.toLowerCase().includes(q)) return false;
+                        if (q && !this.foldDiacritics(s.name.toLowerCase()).includes(q)) return false;
                         return true;
                     });
                 },

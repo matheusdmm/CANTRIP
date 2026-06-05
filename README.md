@@ -6,6 +6,12 @@ Built in Gleam on the BEAM (Erlang VM). single-file Alpine.js dashboard served f
 
 ## Running locally
 
+You will need to have a `.env` file, use the .env.example as basis.
+
+This needs to be setup, otherwise it will run on 0.0.0.0:8080 and pick the configuration for docker.
+
+After that, just launch with `gleam run`.
+
 ```sh
 gleam run    # starts the server on http://localhost:8080
 gleam test   # runs the test suite
