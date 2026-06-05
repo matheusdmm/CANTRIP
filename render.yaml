@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: spell-tracker
+    name: cantrip
     runtime: docker
     plan: free
     region: oregon

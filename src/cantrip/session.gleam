@@ -10,7 +10,7 @@ import gleam/option.{type Option, None, Some}
 import gleam/otp/actor
 import gleam/result
 import gleam/set.{type Set}
-import spell_tracker/slots.{type SlotTable}
+import cantrip/slots.{type SlotTable}
 
 pub type Session {
   Session(

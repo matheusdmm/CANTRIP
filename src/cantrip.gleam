@@ -14,9 +14,9 @@ import gleam/set
 import gleam/string
 import mist
 import simplifile
-import spell_tracker/session
-import spell_tracker/slots
-import spell_tracker/spell.{type Spell}
+import cantrip/session
+import cantrip/slots
+import cantrip/spell.{type Spell}
 import wisp
 import wisp/wisp_mist
 
@@ -28,7 +28,7 @@ pub fn main() -> Nil {
   wisp.configure_logger()
   let secret_key_base = wisp.random_string(64)
 
-  let assert Ok(priv) = application.priv_directory("spell_tracker")
+  let assert Ok(priv) = application.priv_directory("cantrip")
   let assert Ok(spells) = load_spells_from(priv)
   io.println("Loaded " <> int.to_string(list.length(spells)) <> " spells")
 
@@ -116,7 +116,7 @@ fn middleware(
 fn health() -> wisp.Response {
   json.object([
     #("ok", json.bool(True)),
-    #("msg", json.string("spell tracker online")),
+    #("msg", json.string("cantrip online")),
   ])
   |> json.to_string
   |> wisp.json_response(200)

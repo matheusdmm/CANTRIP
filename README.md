@@ -1,24 +1,44 @@
-# spell_tracker
+# Cantrip
 
-[![Package Version](https://img.shields.io/hexpm/v/spell_tracker)](https://hex.pm/packages/spell_tracker)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/spell_tracker/)
+A D&D 5.5e spell reference and at-hand tracker for caster classes.
+Built in Gleam on the BEAM (Erlang VM); single-file Alpine.js dashboard served from the same Gleam server.
 
-```sh
-gleam add spell_tracker@1
-```
-```gleam
-import spell_tracker
-
-pub fn main() -> Nil {
-  // TODO: An example of the project in use
-}
-```
-
-Further documentation can be found at <https://hexdocs.pm/spell_tracker>.
-
-## Development
+## Running locally
 
 ```sh
-gleam run   # Run the project
-gleam test  # Run the tests
+gleam run    # starts the server on http://localhost:8080
+gleam test   # runs the test suite
 ```
+
+## Regenerating the spell dataset
+
+`priv/spells.json` is parsed from the PHB HTML in `test/`:
+
+```sh
+python scripts/parse_phb.py
+```
+
+## Endpoints
+
+```
+GET    /                                       Dashboard (HTML)
+GET    /api/health                             { ok: true }
+
+GET    /classes                                Caster classes
+GET    /classes/:slug/spells[?level=N]         Spells for a class
+GET    /spells/:slug                           One spell
+
+GET    /classes/:slug/session                  Current session state
+PUT    /classes/:slug/session  { level: N }    Set caster level
+POST   /classes/:slug/cast     { spell_level: N }   Spend a slot
+POST   /classes/:slug/long-rest                Restore all slots
+POST   /classes/:slug/short-rest               Warlock-only effect
+
+POST   /classes/:slug/at-hand  { spell_slug: "..." }   Bookmark
+DELETE /classes/:slug/at-hand/:spell-slug              Unbookmark
+POST   /classes/:slug/at-hand/clear                    Wipe bookmarks
+```
+
+## Deploy
+
+`Dockerfile` + `render.yaml` deploy to Render.com on the free tier.
