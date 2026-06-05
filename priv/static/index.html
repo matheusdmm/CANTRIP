@@ -707,7 +707,7 @@
 
             <div class="control-row">
                 <div>
-                    <label for="class">Class</label>
+                    <label for="class">Classe</label>
                     <select id="class" x-model="classSlug" @change="onClassChange()">
                         <template x-for="c in classes" :key="c.slug">
                             <option :value="c.slug" x-text="c.name"></option>
@@ -720,17 +720,17 @@
                 </div>
                 <div>
                     <label>&nbsp;</label>
-                    <button class="primary" @click="setLevel()" :disabled="!classSlug">Set</button>
+                    <button class="primary" @click="setLevel()" :disabled="!classSlug">Ok</button>
                 </div>
                 <div class="rest-tablet" x-show="session.level !== null">
-                    <button @click="longRest()">Long rest</button>
-                    <button @click="shortRest()" x-show="classSlug === 'bruxo'">Short rest</button>
+                    <button @click="longRest()">Descanso Longo</button>
+                    <button @click="shortRest()" x-show="classSlug === 'bruxo'">Descanso Curto</button>
                 </div>
             </div>
 
             <div class="rest-row" x-show="session.level !== null">
-                <button @click="longRest()">Long rest</button>
-                <button @click="shortRest()" x-show="classSlug === 'bruxo'">Short rest</button>
+                <button @click="longRest()">Descanso Longo</button>
+                <button @click="shortRest()" x-show="classSlug === 'bruxo'">Descanso Curto</button>
             </div>
 
             <div x-show="session.level !== null && activeSlots.length > 0">
@@ -765,18 +765,18 @@
                 Spells <span class="count" x-text="'(' + classSpells.length + ')'"></span>
             </button>
             <button class="tab" :class="tab === 'at-hand' ? 'active' : ''" @click="tab = 'at-hand'">
-                At hand <span class="count" x-text="'(' + session.at_hand.length + ')'"></span>
+                Spells Preparadas <span class="count" x-text="'(' + session.at_hand.length + ')'"></span>
             </button>
             <div class="tabs-actions" x-show="session.at_hand.length > 0">
-                <button class="ghost" @click="clearAtHand()">Clear</button>
+                <button class="ghost" @click="clearAtHand()">Limpar</button>
             </div>
         </div>
 
         <!-- Filters -->
         <div class="filters">
-            <input type="search" placeholder="Search by name…" x-model="search" autocomplete="off">
+            <input type="search" placeholder="Procurar pelo nome…" x-model="search" autocomplete="off">
             <select x-model="levelFilter">
-                <option value="">All levels</option>
+                <option value="">Todos os Niveis</option>
                 <option value="0">Truques</option>
                 <option value="1">1º</option>
                 <option value="2">2º</option>
@@ -832,11 +832,11 @@
                     <div class="spell-actions">
                         <button class="bookmark" :class="{ on: isAtHand(spell) }" @click.stop="toggleAtHand(spell)">
                             <span class="bookmark-dot"></span>
-                            <span x-text="isAtHand(spell) ? 'Saved' : 'Save'"></span>
+                            <span x-text="isAtHand(spell) ? 'Salvo' : 'Salvar'"></span>
                         </button>
                         <button class="primary" x-show="spell.level > 0" @click.stop="cast(spell.level)"
                             :disabled="!canCast(spell.level)">
-                            Cast L<span x-text="spell.level"></span>
+                            Castar L<span x-text="spell.level"></span>
                         </button>
                     </div>
                 </div>
@@ -892,7 +892,12 @@
                     this.storageSet('cantrip.activeClass', this.classSlug);
                     await Promise.all([this.loadClassSpells(), this.loadSession()]);
                     await this.rehydrate();
-                    if (this.session.level !== null) this.levelInput = this.session.level;
+                    if (this.session.level !== null) {
+                        this.levelInput = this.session.level;
+                    } else {
+                        const savedLevel = this.storageGet(`cantrip.levelInput.${this.classSlug}`);
+                        if (savedLevel !== null) this.levelInput = parseInt(savedLevel, 10) || 1;
+                    }
                 },
 
                 async loadClasses() {
@@ -1011,6 +1016,7 @@
                 saveLocal() {
                     if (!this.classSlug) return;
                     this.storageSet(this.storageKey(), JSON.stringify(this.session));
+                    this.storageSet(`cantrip.levelInput.${this.classSlug}`, this.levelInput);
                 },
                 loadLocal() {
                     const raw = this.storageGet(this.storageKey());
