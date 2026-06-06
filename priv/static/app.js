@@ -15,6 +15,7 @@ function app() {
     levelFilter: '',
     expanded: {},
     toast: '',
+    toastKind: '',
     toastTimer: null,
     theme: 'light',
     loading: false,
@@ -28,16 +29,30 @@ function app() {
       this.theme =
         document.documentElement.getAttribute('data-theme') || 'light';
       await this.loadClasses();
-      const savedClass = this.storageGet('cantrip.activeClass');
-      if (savedClass && this.classes.find((c) => c.slug === savedClass)) {
-        this.classSlug = savedClass;
-      } else if (
-        this.classes.length &&
-        !this.classes.find((c) => c.slug === this.classSlug)
-      ) {
-        this.classSlug = this.classes[0].slug;
+      const sharedSpell = new URLSearchParams(window.location.search).get('spell');
+      if (sharedSpell) {
+        this.classSlug = 'todas';
+      } else {
+        const savedClass = this.storageGet('cantrip.activeClass');
+        if (savedClass && this.classes.find((c) => c.slug === savedClass)) {
+          this.classSlug = savedClass;
+        } else if (
+          this.classes.length &&
+          !this.classes.find((c) => c.slug === this.classSlug)
+        ) {
+          this.classSlug = this.classes[0].slug;
+        }
       }
       await this.onClassChange();
+      if (sharedSpell) {
+        const found = this.classSpells.find((s) => s.slug === sharedSpell);
+        if (found) this.search = found.name;
+        this.expanded = { ...this.expanded, [sharedSpell]: true };
+        setTimeout(() => {
+          const el = document.querySelector(`[data-spell="${sharedSpell}"]`);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 150);
+      }
     },
 
     async onClassChange() {
@@ -114,6 +129,9 @@ function app() {
         }
         this.session = await r.json();
         this.saveLocal();
+        if (this.session.slots_remaining[spellLevel - 1] === 0) {
+          this.flash(`Slots de nível ${spellLevel} esgotados!`, 'warning');
+        }
         this.pulsedSlot = spellLevel;
         setTimeout(() => {
           this.pulsedSlot = null;
@@ -216,8 +234,19 @@ function app() {
       this.storageSet('cantrip.theme', this.theme);
     },
 
-    flash(msg) {
+    async shareSpell(spell) {
+      const url = `${window.location.origin}${window.location.pathname}?spell=${spell.slug}`;
+      try {
+        await navigator.clipboard.writeText(url);
+        this.flash('Link copiado!', 'success');
+      } catch {
+        this.flash('Não foi possível copiar o link');
+      }
+    },
+
+    flash(msg, kind = 'error') {
       this.toast = msg;
+      this.toastKind = kind;
       clearTimeout(this.toastTimer);
       this.toastTimer = setTimeout(() => {
         this.toast = '';

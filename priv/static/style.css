@@ -13,6 +13,7 @@
   --accent-text: #ffffff;
   --at-hand-bg: #fbfaff;
   --danger: #dc2626;
+  --warning: #d97706;
   --radius: 10px;
   --radius-sm: 6px;
   --transition: 120ms ease;
@@ -34,6 +35,7 @@
   --accent-text: #1a0e20;
   --at-hand-bg: #26192e;
   --danger: #ff6b6b;
+  --warning: #fbbf24;
   color-scheme: dark;
 }
 
@@ -697,6 +699,14 @@ button.ghost:active:not(:disabled) {
 
 .footer a:hover {
   text-decoration: underline;
+}
+
+.toast.toast-success {
+  border-color: var(--accent);
+}
+
+.toast.toast-warning {
+  border-color: var(--warning);
 }
 
 .toast {
