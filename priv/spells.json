@@ -5,10 +5,7 @@
       "slug": "acalmar-emocoes",
       "level": 2,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Clérigo"
-      ],
+      "classes": ["Bardo", "Clérigo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -22,10 +19,7 @@
       "slug": "acudir-os-moribundos",
       "level": 0,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Clérigo", "Druida"],
       "casting_time": "Ação",
       "range": "4,5 metros",
       "components": "V, S",
@@ -39,10 +33,7 @@
       "slug": "alarme",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Guardião", "Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "9 metros",
       "components": "V, S, M (um sino e um fio de prata)",
@@ -56,9 +47,7 @@
       "slug": "aliado-extraplanar",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "10 minutos",
       "range": "18 metros",
       "components": "V, S",
@@ -72,9 +61,7 @@
       "slug": "aljava-veloz",
       "level": 5,
       "school": "Transmutação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V, S, M (uma Aljava no valor de 1 ou mais PO)",
@@ -88,10 +75,7 @@
       "slug": "alterar-se",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -105,12 +89,7 @@
       "slug": "amigos",
       "level": 0,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "3 metros",
       "components": "S, M (um pouco de maquiagem)",
@@ -124,11 +103,7 @@
       "slug": "amizade-animal",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (um bocado de comida)",
@@ -142,10 +117,7 @@
       "slug": "animar-mortos",
       "level": 3,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Mago"],
       "casting_time": "1 minuto",
       "range": "3 metros",
       "components": "V, S, M (uma gota de sangue, um pedaço de carne e uma pitada de pó de osso)",
@@ -159,11 +131,7 @@
       "slug": "animar-objetos",
       "level": 5,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -177,11 +145,7 @@
       "slug": "antipatia-simpatia",
       "level": 8,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Mago"],
       "casting_time": "1 hora",
       "range": "18 metros",
       "components": "V, S, M (uma mistura de vinagre e mel)",
@@ -216,10 +180,7 @@
       "slug": "aprisionamento",
       "level": 9,
       "school": "Abjuração",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "1 minuto",
       "range": "9 metros",
       "components": "V, S, M (uma estatueta do alvo no valor de 5.000 ou mais PO)",
@@ -233,9 +194,7 @@
       "slug": "arca-secreta-de-leomund",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um baú de 1 m por 60 cm por 60 cm, construído com materiais raros no valor de 5.000 ou mais PO, e uma réplica minúscula do baú fabricada com os mesmos materiais no valor de 50 ou mais PO)",
@@ -249,11 +208,7 @@
       "slug": "arma-elemental",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Druida", "Guardião", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -267,9 +222,7 @@
       "slug": "arma-espiritual",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação Bônus",
       "range": "18 metros",
       "components": "V, S",
@@ -283,12 +236,7 @@
       "slug": "arma-magica",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Guardião",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Feiticeiro", "Guardião", "Mago", "Paladino"],
       "casting_time": "Ação Bônus",
       "range": "Toque",
       "components": "V, S",
@@ -302,10 +250,7 @@
       "slug": "armadura-arcana",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um pedaço de couro curtido)",
@@ -319,9 +264,7 @@
       "slug": "armadura-de-agathys",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Bruxo"
-      ],
+      "classes": ["Bruxo"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V, S, M (um caco de vidro azul)",
@@ -335,11 +278,7 @@
       "slug": "arrombar",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V",
@@ -353,9 +292,7 @@
       "slug": "arte-druidica",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -369,10 +306,7 @@
       "slug": "assassino-fantasmagorico",
       "level": 4,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -386,11 +320,7 @@
       "slug": "augurio",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Pessoal",
       "components": "V, S, M (varetas, ossos, cartas ou símbolos semelhantes especialmente marcados no valor de 25 ou mais PO)",
@@ -404,12 +334,7 @@
       "slug": "aumentar-reduzir",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma pitada de ferro em pó)",
@@ -423,9 +348,7 @@
       "slug": "aura-magica-de-nystul",
       "level": 2,
       "school": "Ilusão",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um pequeno quadrado de seda)",
@@ -439,9 +362,7 @@
       "slug": "aura-sagrada",
       "level": 8,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (um relicário no valor de 1.000 ou mais PO)",
@@ -455,10 +376,7 @@
       "slug": "aura-de-pureza",
       "level": 4,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -472,10 +390,7 @@
       "slug": "aura-de-vida",
       "level": 4,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -489,11 +404,7 @@
       "slug": "aura-de-vitalidade",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Druida", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -507,13 +418,7 @@
       "slug": "auxilio",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Guardião", "Paladino"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma tira de pano branco)",
@@ -527,11 +432,7 @@
       "slug": "badalar-funebre",
       "level": 0,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -545,13 +446,7 @@
       "slug": "banimento",
       "level": 4,
       "school": "Abjuração",
-      "classes": [
-        "Bruxo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Bruxo", "Clérigo", "Feiticeiro", "Mago", "Paladino"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (um pentagrama)",
@@ -565,11 +460,7 @@
       "slug": "banquete-de-herois",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida"],
       "casting_time": "10 minutos",
       "range": "Pessoal",
       "components": "V, S, M (uma tigela incrustada de pedras preciosas no valor de 1.000 ou mais PO, que a magia consome)",
@@ -583,9 +474,7 @@
       "slug": "barreira-de-laminas",
       "level": 6,
       "school": "Evocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S",
@@ -599,10 +488,7 @@
       "slug": "boca-encantada",
       "level": 2,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "9 metros",
       "components": "V, S, M (poeira de jade no valor de 10 ou mais PO, que a magia consome)",
@@ -616,10 +502,7 @@
       "slug": "bola-de-fogo",
       "level": 3,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (uma bola de guano de morcego e enxofre)",
@@ -633,10 +516,7 @@
       "slug": "bola-de-fogo-adiavel",
       "level": 7,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (uma bola de guano de morcego e enxofre)",
@@ -650,10 +530,7 @@
       "slug": "bolha-acida",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -667,10 +544,7 @@
       "slug": "bom-fruto",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (um ramo de visco)",
@@ -684,9 +558,7 @@
       "slug": "bordao-mistico",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V, S, M (um ramo de visco)",
@@ -700,9 +572,7 @@
       "slug": "bracos-de-hadar",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Bruxo"
-      ],
+      "classes": ["Bruxo"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -716,10 +586,7 @@
       "slug": "bencao",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (um Símbolo Sagrado no valor de 5 ou mais PO)",
@@ -733,10 +600,7 @@
       "slug": "caldeirao-borbulhante-de-tasha",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "1,5 metro",
       "components": "V, S, M (uma colher de mexer caldeirão dourada no valor de 500 ou mais PO)",
@@ -750,12 +614,7 @@
       "slug": "caminhar-sobre-as-aguas",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Guardião"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro", "Guardião"],
       "casting_time": "Ação ou Ritual",
       "range": "9 metros",
       "components": "V, S, M (um pedaço de cortiça)",
@@ -769,9 +628,7 @@
       "slug": "caminhar-no-vento",
       "level": 6,
       "school": "Transmutação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "1 minuto",
       "range": "9 metros",
       "components": "V, S, M (uma vela)",
@@ -785,10 +642,7 @@
       "slug": "campo-antimagia",
       "level": 8,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (raspas de ferro)",
@@ -802,10 +656,7 @@
       "slug": "cativar",
       "level": 2,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo"
-      ],
+      "classes": ["Bardo", "Bruxo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -819,12 +670,7 @@
       "slug": "cegueira-surdez",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V",
@@ -838,10 +684,7 @@
       "slug": "celeridade",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma lasca de raiz de alcaçuz)",
@@ -855,11 +698,7 @@
       "slug": "chama-continua",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (rubi em pó no valor de 50 ou mais PO, que a magia consome)",
@@ -873,9 +712,7 @@
       "slug": "chama-sagrada",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -889,9 +726,7 @@
       "slug": "chicote-de-espinhos",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (o caule de uma planta espinhosa)",
@@ -905,10 +740,7 @@
       "slug": "chuva-de-meteoros",
       "level": 9,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "1,5 km",
       "components": "V, S",
@@ -922,12 +754,7 @@
       "slug": "clarividencia",
       "level": 3,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Feiticeiro", "Mago"],
       "casting_time": "10 minutos",
       "range": "1,5 km",
       "components": "V, S, M (um foco no valor de 100 ou mais PO, seja um chifre adornado com joias e usado para escutar, ou um olho de vidro usado para enxergar)",
@@ -941,9 +768,7 @@
       "slug": "clone",
       "level": 8,
       "school": "Necromancia",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "1 hora",
       "range": "Toque",
       "components": "V, S, M (um diamante no valor de 1.000 ou mais PO, que a magia consome, e um recipiente vedável no valor de 2.000 ou mais PO que seja grande o suficiente para conter a criatura sendo clonada)",
@@ -957,9 +782,7 @@
       "slug": "coluna-de-chamas",
       "level": 5,
       "school": "Evocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (uma pitada de enxofre)",
@@ -973,11 +796,7 @@
       "slug": "comando",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V",
@@ -991,12 +810,7 @@
       "slug": "compreender-idiomas",
       "level": 1,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação ou Ritual",
       "range": "Pessoal",
       "components": "V, S, M (uma pitada de fuligem e sal)",
@@ -1010,9 +824,7 @@
       "slug": "compulsao",
       "level": 4,
       "school": "Encantamento",
-      "classes": [
-        "Bardo"
-      ],
+      "classes": ["Bardo"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -1026,9 +838,7 @@
       "slug": "comunhao",
       "level": 5,
       "school": "Adivinhação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Pessoal",
       "components": "V, S, M (incenso)",
@@ -1042,10 +852,7 @@
       "slug": "comunhao-com-a-natureza",
       "level": 5,
       "school": "Adivinhação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Pessoal",
       "components": "V, S",
@@ -1059,11 +866,7 @@
       "slug": "cone-de-frio",
       "level": 5,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (um pequeno cone de cristal ou vidro)",
@@ -1077,12 +880,7 @@
       "slug": "confusao",
       "level": 4,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (três cascas de nozes)",
@@ -1096,9 +894,7 @@
       "slug": "consagrar",
       "level": 5,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "24 horas",
       "range": "Toque",
       "components": "V, S, M (incenso no valor de 1.000 ou mais PO, que a magia consome)",
@@ -1112,10 +908,7 @@
       "slug": "contato-extraplanar",
       "level": 5,
       "school": "Adivinhação",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Pessoal",
       "components": "V",
@@ -1129,9 +922,7 @@
       "slug": "contingencia",
       "level": 6,
       "school": "Abjuração",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "10 minutos",
       "range": "Pessoal",
       "components": "V, S, M (uma estatueta de si mesmo incrustada de pedras preciosas no valor de 1.500 ou mais PO)",
@@ -1145,11 +936,7 @@
       "slug": "contramagia",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Reação, que você executa quando vê uma criatura a até 18 metros de você conjurando uma magia com componentes Verbais, Somáticos ou Materiais",
       "range": "18 metros",
       "components": "S",
@@ -1163,11 +950,7 @@
       "slug": "controlar-o-clima",
       "level": 8,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Mago"],
       "casting_time": "10 minutos",
       "range": "Pessoal",
       "components": "V, S, M (um incenso aceso)",
@@ -1181,11 +964,7 @@
       "slug": "controlar-agua",
       "level": 4,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Mago"],
       "casting_time": "Ação",
       "range": "90 metros",
       "components": "V, S, M (uma mistura de água e poeira)",
@@ -1199,10 +978,7 @@
       "slug": "contagio",
       "level": 5,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Clérigo", "Druida"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "",
@@ -1216,10 +992,7 @@
       "slug": "convocar-celestial",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um relicário no valor de 500 ou mais PO)",
@@ -1233,11 +1006,7 @@
       "slug": "convocar-elemental",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Druida", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (ar, uma pedra, cinzas e água dentro de um frasco incrustado de ouro no valor de 400 ou mais PO)",
@@ -1251,9 +1020,7 @@
       "slug": "convocar-familiar",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "1 hora ou Ritual",
       "range": "3 metros",
       "components": "V, S, M (incenso queimando no valor de 10 ou mais PO, que a magia consome)",
@@ -1267,12 +1034,7 @@
       "slug": "convocar-feerico",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Druida",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Druida", "Guardião", "Mago"],
       "casting_time": "ama Ação",
       "range": "27 metros",
       "components": "V, S, M (uma flor dourada no valor de 300 ou mais PO)",
@@ -1286,9 +1048,7 @@
       "slug": "convocar-montaria",
       "level": 2,
       "school": "Invocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -1302,9 +1062,7 @@
       "slug": "convocar-relampagos",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -1318,9 +1076,7 @@
       "slug": "corda-extradimensional",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um pedaço de corda)",
@@ -1334,9 +1090,7 @@
       "slug": "cordao-de-flechas",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma trança ornamental)",
@@ -1350,12 +1104,7 @@
       "slug": "coroa-da-loucura",
       "level": 2,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -1369,10 +1118,7 @@
       "slug": "corrente-de-relampagos",
       "level": 6,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (três alfinetes de prata)",
@@ -1386,10 +1132,7 @@
       "slug": "crescer-espinhos",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (sete espinhos)",
@@ -1403,11 +1146,7 @@
       "slug": "crescimento-de-plantas",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Druida", "Guardião"],
       "casting_time": "Ação (Crescimento Excessivo) ou 8 horas (Fertilização)",
       "range": "45 metros",
       "components": "V, S",
@@ -1421,9 +1160,7 @@
       "slug": "criar-chamas",
       "level": 0,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V, S",
@@ -1437,10 +1174,7 @@
       "slug": "criar-comida-e-agua",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -1454,11 +1188,7 @@
       "slug": "criar-mortos-vivos",
       "level": 6,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Clérigo", "Mago"],
       "casting_time": "1 minuto",
       "range": "3 metros",
       "components": "V, S, M (uma pedra de ônix preto de 150 ou mais PO para cada cadáver)",
@@ -1472,9 +1202,7 @@
       "slug": "criar-passagem",
       "level": 5,
       "school": "Transmutação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma pitada de sementes de gergelim)",
@@ -1488,10 +1216,7 @@
       "slug": "criar-ou-destruir-agua",
       "level": 1,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Clérigo", "Druida"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma mistura de água e areia)",
@@ -1505,10 +1230,7 @@
       "slug": "criacao",
       "level": 5,
       "school": "Ilusão",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "1 minuto",
       "range": "9 metros",
       "components": "V, S, M (um pincel)",
@@ -1522,10 +1244,7 @@
       "slug": "cura-completa",
       "level": 6,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Clérigo", "Druida"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -1539,9 +1258,7 @@
       "slug": "cura-completa-em-massa",
       "level": 9,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -1555,13 +1272,7 @@
       "slug": "curar-ferimentos",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Guardião", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -1575,11 +1286,7 @@
       "slug": "curar-ferimentos-em-massa",
       "level": 5,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -1593,11 +1300,7 @@
       "slug": "carcere-de-energia",
       "level": 7,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "30 metros",
       "components": "V, S, M (rubi em pó no valor de 1.500 ou mais PO, que a magia consome)",
@@ -1611,9 +1314,7 @@
       "slug": "cao-fiel-de-mordenkainen",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (um apito de prata)",
@@ -1627,12 +1328,7 @@
       "slug": "circulo-magico",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Bruxo",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Bruxo", "Mago", "Paladino"],
       "casting_time": "1 minuto",
       "range": "3 metros",
       "components": "V, S, M (sal e prata em pó no valor de 100 ou mais PO, que a magia consome)",
@@ -1646,11 +1342,7 @@
       "slug": "circulo-da-morte",
       "level": 6,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (o pó de uma pérola negra esmagada no valor de 500 ou mais PO)",
@@ -1664,11 +1356,7 @@
       "slug": "circulo-de-poder",
       "level": 5,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Mago", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -1682,12 +1370,7 @@
       "slug": "circulo-de-teleporte",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "1 minuto",
       "range": "3 metros",
       "components": "V, M (tintas raras no valor de 50 ou mais PO, que a magia consome)",
@@ -1701,9 +1384,7 @@
       "slug": "cupula-antivida",
       "level": 5,
       "school": "Abjuração",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -1717,9 +1398,7 @@
       "slug": "danacao",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bruxo"
-      ],
+      "classes": ["Bruxo"],
       "casting_time": "Ação Bônus",
       "range": "27 metros",
       "components": "V, S, M (o olho petrificado de uma salamandra)",
@@ -1733,10 +1412,7 @@
       "slug": "danca-irresistivel-de-otto",
       "level": 6,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V",
@@ -1750,11 +1426,7 @@
       "slug": "de-carne-para-pedra",
       "level": 6,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (uma pena de cocatriz)",
@@ -1768,11 +1440,7 @@
       "slug": "dedo-da-morte",
       "level": 7,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -1786,9 +1454,7 @@
       "slug": "defensor-da-fe",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V",
@@ -1802,10 +1468,7 @@
       "slug": "desejo",
       "level": 9,
       "school": "Invocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -1819,10 +1482,7 @@
       "slug": "desintegrar",
       "level": 6,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (uma pedra-ímã e poeira)",
@@ -1836,11 +1496,7 @@
       "slug": "despedacar",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (uma lasca de mica)",
@@ -1854,10 +1510,7 @@
       "slug": "despertar",
       "level": 5,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Druida"],
       "casting_time": "8 horas",
       "range": "Toque",
       "components": "V, S, M (uma ágata no valor de 1.000 ou mais PO, que a magia consome)",
@@ -1871,11 +1524,7 @@
       "slug": "despistar",
       "level": 5,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "S",
@@ -1889,9 +1538,7 @@
       "slug": "destruicao-atordoante",
       "level": 4,
       "school": "Encantamento",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir uma criatura com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "",
@@ -1905,9 +1552,7 @@
       "slug": "destruicao-banidora",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir uma criatura com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "",
@@ -1921,9 +1566,7 @@
       "slug": "destruicao-cauterizante",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após acertar um alvo com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "",
@@ -1937,9 +1580,7 @@
       "slug": "destruicao-cegante",
       "level": 3,
       "school": "Evocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir uma criatura com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "",
@@ -1953,9 +1594,7 @@
       "slug": "destruicao-colerica",
       "level": 1,
       "school": "Necromancia",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir uma criatura com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "V",
@@ -1969,9 +1608,7 @@
       "slug": "destruicao-divina",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após acertar um alvo com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "V",
@@ -1985,9 +1622,7 @@
       "slug": "destruicao-estrondosa",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após acertar um alvo com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "",
@@ -2001,9 +1636,7 @@
       "slug": "destruicao-radiante",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir uma criatura com uma arma Corpo a Corpo ou um Ataque Desarmado",
       "range": "Pessoal",
       "components": "",
@@ -2040,11 +1673,7 @@
       "slug": "detectar-pensamentos",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (1 Peça de Cobre)",
@@ -2058,12 +1687,7 @@
       "slug": "detectar-veneno-e-doenca",
       "level": 1,
       "school": "Adivinhação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Druida", "Guardião", "Paladino"],
       "casting_time": "Ação ou Ritual",
       "range": "Pessoal",
       "components": "V, S, M (uma folha de teixo)",
@@ -2077,10 +1701,7 @@
       "slug": "detectar-o-bem-e-o-mal",
       "level": 1,
       "school": "Adivinhação",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -2094,9 +1715,7 @@
       "slug": "disco-flutuante-de-tenser",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação ou Ritual",
       "range": "9 metros",
       "components": "V, S, M (uma gota de mercúrio)",
@@ -2110,11 +1729,7 @@
       "slug": "disfarcar-se",
       "level": 1,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -2151,10 +1766,7 @@
       "slug": "dissipar-o-bem-e-o-mal",
       "level": 5,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (prata e ferro em pó)",
@@ -2168,11 +1780,7 @@
       "slug": "dominar-fera",
       "level": 4,
       "school": "Encantamento",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Guardião"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -2186,12 +1794,7 @@
       "slug": "dominar-monstro",
       "level": 8,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -2205,11 +1808,7 @@
       "slug": "dominar-pessoa",
       "level": 5,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -2223,9 +1822,7 @@
       "slug": "duelo-compelido",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus",
       "range": "9 metros",
       "components": "V",
@@ -2239,11 +1836,7 @@
       "slug": "elementalismo",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -2257,10 +1850,7 @@
       "slug": "emaranhar",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S",
@@ -2274,10 +1864,7 @@
       "slug": "encarnacao-fantasmagorica",
       "level": 9,
       "school": "Ilusão",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -2291,11 +1878,7 @@
       "slug": "encontrar-armadilhas",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Clérigo", "Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -2309,11 +1892,7 @@
       "slug": "encontrar-o-caminho",
       "level": 6,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida"],
       "casting_time": "1 minuto",
       "range": "Pessoal",
       "components": "V, S, M (um conjunto de ferramentas de adivinhação — como cartas ou runas — no valor de 100 ou mais PO)",
@@ -2327,13 +1906,7 @@
       "slug": "enfeiticar-monstro",
       "level": 4,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -2347,13 +1920,7 @@
       "slug": "enfeiticar-pessoa",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -2367,11 +1934,7 @@
       "slug": "escalada-de-aranha",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma gota de betume e uma aranha)",
@@ -2385,11 +1948,7 @@
       "slug": "escrita-ilusoria",
       "level": 1,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Toque",
       "components": "S, M (tinta no valor de 10 ou mais PO, que a magia consome)",
@@ -2403,10 +1962,7 @@
       "slug": "escudo-arcano",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Reação, que você executa quando é atingido por uma jogada de ataque ou é alvo da magia Mísseis Mágicos",
       "range": "Pessoal",
       "components": "V, S",
@@ -2420,11 +1976,7 @@
       "slug": "escudo-ardente",
       "level": 4,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (um pouco de fósforo ou um vaga-lume)",
@@ -2438,10 +1990,7 @@
       "slug": "escudo-da-fe",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação Bônus",
       "range": "18 metros",
       "components": "V, S, M (um pergaminho de oração)",
@@ -2455,11 +2004,7 @@
       "slug": "escuridao",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, M (pelo de morcego e um pedaço de carvão)",
@@ -2473,10 +2018,7 @@
       "slug": "esfera-congelante-de-otiluke",
       "level": 6,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "90 metros",
       "components": "V, S, M (uma esfera de cristal em miniatura)",
@@ -2490,11 +2032,7 @@
       "slug": "esfera-flamejante",
       "level": 2,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (uma bola de cera)",
@@ -2508,9 +2046,7 @@
       "slug": "esfera-resiliente-de-otiluke",
       "level": 4,
       "school": "Abjuração",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma esfera de vidro)",
@@ -2524,10 +2060,7 @@
       "slug": "esfera-vitriolica",
       "level": 4,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (uma gota de bile)",
@@ -2541,10 +2074,7 @@
       "slug": "espada-de-mordenkainen",
       "level": 7,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (uma espada em miniatura no valor de 250 ou mais PO)",
@@ -2558,11 +2088,7 @@
       "slug": "espinho-mental",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "S",
@@ -2576,10 +2102,7 @@
       "slug": "esquentar-metal",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Druida"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um pedaço de ferro e uma chama)",
@@ -2593,12 +2116,7 @@
       "slug": "estatica-sinaptica",
       "level": 5,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -2612,9 +2130,7 @@
       "slug": "explosao-elemental",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro"
-      ],
+      "classes": ["Feiticeiro"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "",
@@ -2628,12 +2144,7 @@
       "slug": "explosao-solar",
       "level": 8,
       "school": "Evocação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (um pedaço de pedra solar)",
@@ -2647,9 +2158,7 @@
       "slug": "fabricar",
       "level": 4,
       "school": "Transmutação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "10 minutos",
       "range": "36 metros",
       "components": "V, S",
@@ -2663,11 +2172,7 @@
       "slug": "faca-de-gelo",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "S, M (uma gota de água ou um pedaço de gelo)",
@@ -2681,10 +2186,7 @@
       "slug": "fagulha-estelar",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Druida"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -2698,12 +2200,7 @@
       "slug": "falar-com-animais",
       "level": 1,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Bruxo", "Druida", "Guardião"],
       "casting_time": "Ação ou Ritual",
       "range": "Pessoal",
       "components": "V, S",
@@ -2717,11 +2214,7 @@
       "slug": "falar-com-mortos",
       "level": 3,
       "school": "Necromancia",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Mago"],
       "casting_time": "Ação",
       "range": "3 metros",
       "components": "V, S, M (um incenso aceso)",
@@ -2735,11 +2228,7 @@
       "slug": "falar-com-plantas",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -2753,9 +2242,7 @@
       "slug": "favor-divino",
       "level": 1,
       "school": "Transmutação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V, S",
@@ -2769,9 +2256,7 @@
       "slug": "flecha-relampago",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir ou errar um alvo com um ataque à distância usando uma arma",
       "range": "Pessoal",
       "components": "V, S",
@@ -2785,9 +2270,7 @@
       "slug": "flecha-acida-de-melf",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (folha de ruibarbo em pó)",
@@ -2801,10 +2284,7 @@
       "slug": "fogo-das-fadas",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Druida"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V",
@@ -2818,9 +2298,7 @@
       "slug": "fome-de-hadar",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Bruxo"
-      ],
+      "classes": ["Bruxo"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (um tentáculo em conserva)",
@@ -2834,10 +2312,7 @@
       "slug": "fonte-do-luar",
       "level": 4,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Druida"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -2851,13 +2326,7 @@
       "slug": "forma-eterea",
       "level": 7,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Clérigo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -2871,11 +2340,7 @@
       "slug": "forma-gasosa",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um pouco de gaze)",
@@ -2889,9 +2354,7 @@
       "slug": "formas-animais",
       "level": 8,
       "school": "Transmutação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -2905,11 +2368,7 @@
       "slug": "forca-espectral",
       "level": 2,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um pouco de lã)",
@@ -2923,11 +2382,7 @@
       "slug": "gargalhada-nefasta-de-tasha",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma torta e uma pena)",
@@ -2941,11 +2396,7 @@
       "slug": "glifo-de-protecao",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Mago"],
       "casting_time": "1 hora",
       "range": "Toque",
       "components": "V, S, M (um diamante em pó no valor de 200 ou mais PO, que a magia consome)",
@@ -2959,10 +2410,7 @@
       "slug": "globo-de-invulnerabilidade",
       "level": 6,
       "school": "Abjuração",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma conta de vidro)",
@@ -2976,12 +2424,7 @@
       "slug": "golpe-certeiro",
       "level": 0,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "S, M (uma arma com a qual você tem proficiência e que vale 1 ou mais PP)",
@@ -2995,9 +2438,7 @@
       "slug": "golpe-constritor",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir uma criatura com uma arma",
       "range": "Pessoal",
       "components": "V",
@@ -3011,10 +2452,7 @@
       "slug": "golpe-de-arco",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "S, M (uma arma Corpo a Corpo que vale 1 ou mais PP)",
@@ -3028,10 +2466,7 @@
       "slug": "graxa",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um pouco de banha de porco ou manteiga)",
@@ -3045,9 +2480,7 @@
       "slug": "guardioes-espirituais",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (um pergaminho de oração)",
@@ -3061,10 +2494,7 @@
       "slug": "heroismo",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -3078,10 +2508,7 @@
       "slug": "identificar",
       "level": 1,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Toque",
       "components": "V, S, M (uma pérola no valor de 100 ou mais PO)",
@@ -3095,12 +2522,7 @@
       "slug": "ilusao-menor",
       "level": 0,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "S, M (um pouco de lã)",
@@ -3114,10 +2536,7 @@
       "slug": "ilusao-programada",
       "level": 6,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (pó de jade no valor de 25 ou mais PO)",
@@ -3131,12 +2550,7 @@
       "slug": "imagem-maior",
       "level": 3,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um pouco de lã)",
@@ -3150,11 +2564,7 @@
       "slug": "imagem-silenciosa",
       "level": 1,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um pouco de lã)",
@@ -3168,11 +2578,7 @@
       "slug": "indetectavel",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma pitada de poeira de diamante no valor de 25 ou mais PO, que a magia consome)",
@@ -3186,9 +2592,7 @@
       "slug": "infligir-ferimentos",
       "level": 1,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -3202,9 +2606,7 @@
       "slug": "inseto-gigante",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -3218,11 +2620,7 @@
       "slug": "inverter-a-gravidade",
       "level": 7,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "30 metros",
       "components": "V, S, M (uma pedra-ímã e raspas de ferro)",
@@ -3236,12 +2634,7 @@
       "slug": "invisibilidade",
       "level": 2,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um cílio envolto em goma arábica)",
@@ -3255,11 +2648,7 @@
       "slug": "invisibilidade-maior",
       "level": 4,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -3273,10 +2662,7 @@
       "slug": "invocar-aberracao",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um tentáculo em conserva e um globo ocular em um frasco incrustado de platina no valor de 400 ou mais PO)",
@@ -3290,10 +2676,7 @@
       "slug": "invocar-animais",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -3307,9 +2690,7 @@
       "slug": "invocar-barragem",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma arma Corpo a Corpo ou à Distância que vale pelo menos 1 PP)",
@@ -3323,9 +2704,7 @@
       "slug": "invocar-celestial",
       "level": 7,
       "school": "Invocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S",
@@ -3339,9 +2718,7 @@
       "slug": "invocar-constructo",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um cofre no valor de 400 ou mais PO)",
@@ -3355,9 +2732,7 @@
       "slug": "invocar-dragao",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um objeto com a imagem de um dragão gravado nele no valor de 500 ou mais PO)",
@@ -3371,10 +2746,7 @@
       "slug": "invocar-elementais-menores",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Druida", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -3388,10 +2760,7 @@
       "slug": "invocar-elemental",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Druida", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -3405,10 +2774,7 @@
       "slug": "invocar-fera",
       "level": 2,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (uma pluma, tufo de pele e rabo de peixe dentro de uma bolota dourada no valor de 200 ou mais PO)",
@@ -3422,9 +2788,7 @@
       "slug": "invocar-feerico",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -3438,10 +2802,7 @@
       "slug": "invocar-morto-vivo",
       "level": 3,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um crânio dourado no valor de 300 ou mais PO)",
@@ -3455,9 +2816,7 @@
       "slug": "invocar-saraivada",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (uma arma Corpo a Corpo ou à Distância no valor de 1 ou mais PP)",
@@ -3471,10 +2830,7 @@
       "slug": "invocar-seres-da-floresta",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -3488,10 +2844,7 @@
       "slug": "invocar-infero",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um frasco com sangue no valor de 600 ou mais PO)",
@@ -3505,9 +2858,7 @@
       "slug": "invocacao-instantanea-de-drawmij",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Toque",
       "components": "V, S, M (uma safira no valor de 1.000 ou mais PO)",
@@ -3521,9 +2872,7 @@
       "slug": "labirinto",
       "level": 8,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -3537,11 +2886,7 @@
       "slug": "lendas-e-historias",
       "level": 5,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Mago"],
       "casting_time": "10 minutos",
       "range": "Pessoal",
       "components": "V, S, M (incenso no valor de 250 ou mais PO, que a magia consome, e quatro tiras de marfim no valor de 50 ou mais PO cada)",
@@ -3555,11 +2900,7 @@
       "slug": "lentidao",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (uma gota de melaço)",
@@ -3573,11 +2914,7 @@
       "slug": "leque-cromatico",
       "level": 1,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma pitada de areia colorida)",
@@ -3591,10 +2928,7 @@
       "slug": "levitacao",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (uma mola de metal)",
@@ -3608,10 +2942,7 @@
       "slug": "ligacao-telepatica-de-rary",
       "level": 5,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação ou Ritual",
       "range": "9 metros",
       "components": "V, S, M (dois ovos)",
@@ -3625,10 +2956,7 @@
       "slug": "limpar-a-mente",
       "level": 8,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -3642,11 +2970,7 @@
       "slug": "localizar-animais-ou-plantas",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Druida", "Guardião"],
       "casting_time": "Ação ou Ritual",
       "range": "Pessoal",
       "components": "V, S, M (pelo de um cão de caça)",
@@ -3660,14 +2984,7 @@
       "slug": "localizar-criatura",
       "level": 4,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Guardião", "Mago", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (pelo de um cão de caça)",
@@ -3681,14 +2998,7 @@
       "slug": "localizar-objeto",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Guardião", "Mago", "Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (um galho bifurcado)",
@@ -3702,10 +3012,7 @@
       "slug": "loquacidade",
       "level": 8,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo"
-      ],
+      "classes": ["Bardo", "Bruxo"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -3719,12 +3026,7 @@
       "slug": "lufada-de-vento",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (a semente de um legume)",
@@ -3738,12 +3040,7 @@
       "slug": "luz",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, M (um vaga-lume ou musgo fosforescente)",
@@ -3757,13 +3054,7 @@
       "slug": "luz-do-dia",
       "level": 3,
       "school": "Evocação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro", "Guardião", "Paladino"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -3777,11 +3068,7 @@
       "slug": "luzes-dancantes",
       "level": 0,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um pouco de fósforo)",
@@ -3795,10 +3082,7 @@
       "slug": "lamina-flamejante",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro"
-      ],
+      "classes": ["Druida", "Feiticeiro"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V, S, M (uma folha de sumagre)",
@@ -3812,13 +3096,7 @@
       "slug": "linguas",
       "level": 3,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Clérigo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, M (um zigurate em miniatura)",
@@ -3832,12 +3110,7 @@
       "slug": "malogro",
       "level": 4,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -3851,10 +3124,7 @@
       "slug": "mansao-magnifica-de-mordenkainen",
       "level": 7,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "1 minuto",
       "range": "90 metros",
       "components": "V, S, M (uma porta em miniatura no valor de 15 ou mais PO)",
@@ -3868,9 +3138,7 @@
       "slug": "manto-do-cruzado",
       "level": 3,
       "school": "Evocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -3884,9 +3152,7 @@
       "slug": "marca-do-predador",
       "level": 1,
       "school": "Adivinhação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação Bônus",
       "range": "27 metros",
       "components": "V",
@@ -3900,12 +3166,7 @@
       "slug": "mau-olhado",
       "level": 6,
       "school": "Necromancia",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -3919,12 +3180,7 @@
       "slug": "medo",
       "level": 3,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma pena branca)",
@@ -3938,11 +3194,7 @@
       "slug": "mensageiro-animal",
       "level": 2,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Druida", "Guardião"],
       "casting_time": "Ação ou Ritual",
       "range": "9 metros",
       "components": "V, S, M (um bocado de comida)",
@@ -3956,12 +3208,7 @@
       "slug": "mensagem",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "S, M (um fio de cobre)",
@@ -3975,11 +3222,7 @@
       "slug": "mesclar-se-as-rochas",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Clérigo", "Druida", "Guardião"],
       "casting_time": "Ação ou Ritual",
       "range": "Toque",
       "components": "V, S",
@@ -3993,10 +3236,7 @@
       "slug": "metamorfose",
       "level": 9,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Druida", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma argola de jade no valor de 1.500 ou mais PO)",
@@ -4010,11 +3250,7 @@
       "slug": "miragem-arcana",
       "level": 7,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Mago"],
       "casting_time": "10 minutos",
       "range": "À sua vista",
       "components": "V, S",
@@ -4028,13 +3264,7 @@
       "slug": "missao",
       "level": 5,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Paladino",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Paladino", "Mago"],
       "casting_time": "1 minuto",
       "range": "18 metros",
       "components": "V",
@@ -4048,10 +3278,7 @@
       "slug": "modificar-memoria",
       "level": 5,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -4065,11 +3292,7 @@
       "slug": "moldar-rochas",
       "level": 4,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (argila mole)",
@@ -4083,9 +3306,7 @@
       "slug": "molestia",
       "level": 6,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -4099,9 +3320,7 @@
       "slug": "montaria-fantasmagorica",
       "level": 3,
       "school": "Ilusão",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "9 metros",
       "components": "V, S",
@@ -4115,11 +3334,7 @@
       "slug": "mover-terra",
       "level": 6,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (uma pá em miniatura)",
@@ -4133,12 +3348,7 @@
       "slug": "movimentacao-livre",
       "level": 4,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma alça de couro)",
@@ -4152,10 +3362,7 @@
       "slug": "muralha-prismatica",
       "level": 9,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -4169,9 +3376,7 @@
       "slug": "muralha-de-energia",
       "level": 5,
       "school": "Evocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um caco de vidro)",
@@ -4185,9 +3390,7 @@
       "slug": "muralha-de-espinhos",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um punhado de espinhos)",
@@ -4201,11 +3404,7 @@
       "slug": "muralha-de-fogo",
       "level": 4,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um pedaço de carvão)",
@@ -4219,9 +3418,7 @@
       "slug": "muralha-de-gelo",
       "level": 6,
       "school": "Evocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um pedaço de quartzo)",
@@ -4235,11 +3432,7 @@
       "slug": "muralha-de-pedra",
       "level": 5,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um cubo de granito)",
@@ -4253,10 +3446,7 @@
       "slug": "muralha-de-vento",
       "level": 3,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (um leque e uma pena)",
@@ -4270,10 +3460,7 @@
       "slug": "mao-de-bigby",
       "level": 5,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (uma casca de ovo e uma luva)",
@@ -4287,10 +3474,7 @@
       "slug": "maos-flamejantes",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -4304,12 +3488,7 @@
       "slug": "maos-magicas",
       "level": 0,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -4323,10 +3502,7 @@
       "slug": "misseis-magicos",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -4340,11 +3516,7 @@
       "slug": "nevasca",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (um guarda-chuva em miniatura)",
@@ -4358,11 +3530,7 @@
       "slug": "nuvem-fetida",
       "level": 3,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um ovo podre)",
@@ -4376,11 +3544,7 @@
       "slug": "nuvem-incendiaria",
       "level": 8,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S",
@@ -4394,12 +3558,7 @@
       "slug": "nuvem-de-adagas",
       "level": 2,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um caco de vidro)",
@@ -4413,10 +3572,7 @@
       "slug": "nevoa-mortal",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -4430,12 +3586,7 @@
       "slug": "nevoa-obscurecente",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -4449,9 +3600,7 @@
       "slug": "olho-arcano",
       "level": 4,
       "school": "Adivinhação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (um pouco de pele de morcego)",
@@ -4465,9 +3614,7 @@
       "slug": "onda-destrutiva",
       "level": 5,
       "school": "Evocação",
-      "classes": [
-        "Paladino"
-      ],
+      "classes": ["Paladino"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -4481,12 +3628,7 @@
       "slug": "onda-trovejante",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -4500,10 +3642,7 @@
       "slug": "oracao-de-cura",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "10 minutos",
       "range": "9 metros",
       "components": "V",
@@ -4517,10 +3656,7 @@
       "slug": "orbe-cromatico",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um diamante no valor de 50 ou mais PO)",
@@ -4534,10 +3670,7 @@
       "slug": "orientacao",
       "level": 0,
       "school": "Adivinhação",
-      "classes": [
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Clérigo", "Druida"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -4551,12 +3684,7 @@
       "slug": "padrao-hipnotico",
       "level": 3,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "S, M (uma pitada de confete)",
@@ -4570,11 +3698,7 @@
       "slug": "palavra-curativa",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida"],
       "casting_time": "Ação Bônus",
       "range": "18 metros",
       "components": "V",
@@ -4588,10 +3712,7 @@
       "slug": "palavra-curativa-em-massa",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo"
-      ],
+      "classes": ["Bardo", "Clérigo"],
       "casting_time": "Ação Bônus",
       "range": "18 metros",
       "components": "V",
@@ -4605,9 +3726,7 @@
       "slug": "palavra-sagrada",
       "level": 7,
       "school": "Evocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação Bônus",
       "range": "9 metros",
       "components": "V",
@@ -4621,12 +3740,7 @@
       "slug": "palavra-de-poder-atordoar",
       "level": 8,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "",
@@ -4640,10 +3754,7 @@
       "slug": "palavra-de-poder-fortificar",
       "level": 7,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Clérigo"
-      ],
+      "classes": ["Bardo", "Clérigo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "",
@@ -4657,12 +3768,7 @@
       "slug": "palavra-de-poder-matar",
       "level": 9,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "",
@@ -4676,10 +3782,7 @@
       "slug": "palavra-de-poder-salvar",
       "level": 9,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Clérigo"
-      ],
+      "classes": ["Bardo", "Clérigo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "",
@@ -4693,9 +3796,7 @@
       "slug": "palavra-de-radiancia",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, M (um símbolo com um raio de sol)",
@@ -4709,9 +3810,7 @@
       "slug": "palavra-de-regresso",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "1,5 metro",
       "components": "V",
@@ -4725,12 +3824,7 @@
       "slug": "paralisar-monstro",
       "level": 5,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um pedaço reto de ferro)",
@@ -4744,14 +3838,7 @@
       "slug": "paralisar-pessoa",
       "level": 2,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Clérigo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um pedaço reto de ferro)",
@@ -4765,10 +3852,7 @@
       "slug": "parar-o-tempo",
       "level": 9,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -4782,10 +3866,7 @@
       "slug": "passo-arboreo",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -4799,11 +3880,7 @@
       "slug": "passo-nebuloso",
       "level": 2,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V",
@@ -4817,10 +3894,7 @@
       "slug": "passo-sem-rastro",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (cinzas de ramo de visco queimado)",
@@ -4834,12 +3908,7 @@
       "slug": "passos-largos",
       "level": 1,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma pitada de poeira)",
@@ -4853,10 +3922,7 @@
       "slug": "pele-casca",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação Bônus",
       "range": "Toque",
       "components": "",
@@ -4870,12 +3936,7 @@
       "slug": "pele-rocha",
       "level": 4,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (poeira de diamante no valor de 100 ou mais PO, que a magia consome)",
@@ -4889,10 +3950,7 @@
       "slug": "pequeno-refugio-de-leomund",
       "level": 3,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "1 minuto ou Ritual",
       "range": "Pessoal",
       "components": "V, S, M (uma conta de cristal)",
@@ -4906,11 +3964,7 @@
       "slug": "perdicao",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Clérigo"
-      ],
+      "classes": ["Bardo", "Bruxo", "Clérigo"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma gota de sangue)",
@@ -4924,10 +3978,7 @@
       "slug": "piscar",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -4941,12 +3992,7 @@
       "slug": "polimorfia",
       "level": 4,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um casulo de lagarta)",
@@ -4960,11 +4006,7 @@
       "slug": "polimorfia-total",
       "level": 9,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S, M (uma gota de mercúrio, uma porção de goma arábica e um fiapo de fumaça)",
@@ -4978,12 +4020,7 @@
       "slug": "porta-dimensional",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "150 metros",
       "components": "V",
@@ -4997,11 +4034,7 @@
       "slug": "portais-arcanos",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "150 metros",
       "components": "V, S",
@@ -5015,12 +4048,7 @@
       "slug": "portal",
       "level": 9,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Clérigo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um diamante no valor de 5.000 ou mais PO)",
@@ -5034,11 +4062,7 @@
       "slug": "praga-de-insetos",
       "level": 5,
       "school": "Invocação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro"],
       "casting_time": "Ação",
       "range": "90 metros",
       "components": "V, S, M (um gafanhoto)",
@@ -5052,10 +4076,7 @@
       "slug": "presenca-regia-de-yolande",
       "level": 5,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma tiara em miniatura)",
@@ -5069,11 +4090,7 @@
       "slug": "pressagio",
       "level": 4,
       "school": "Adivinhação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Mago"],
       "casting_time": "Ação ou Ritual",
       "range": "Pessoal",
       "components": "V, S, M (incenso no valor de 25 ou mais PO, que a magia consome)",
@@ -5087,12 +4104,7 @@
       "slug": "prestidigitacao-arcana",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "3 metros",
       "components": "V, S",
@@ -5106,9 +4118,7 @@
       "slug": "proibicao",
       "level": 6,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "10 minutos ou Ritual",
       "range": "Toque",
       "components": "V, S, M (rubi em pó no valor de 1.000 ou mais PO)",
@@ -5122,10 +4132,7 @@
       "slug": "projetar-imagem",
       "level": 7,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "Ação",
       "range": "800 quilômetros",
       "components": "V, S, M (uma estatueta de si mesmo no valor de 5 ou mais PO)",
@@ -5139,11 +4146,7 @@
       "slug": "projecao-astral",
       "level": 9,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Bruxo", "Mago"],
       "casting_time": "1 hora",
       "range": "3 metros",
       "components": "V, S, M (para cada um dos alvos da magia, um zircão no valor de 1.000 ou mais PO e uma barra de prata no valor de 100 ou mais PO, que a magia consome)",
@@ -5157,10 +4160,7 @@
       "slug": "proteger-fortaleza",
       "level": 6,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Mago"],
       "casting_time": "1 hora",
       "range": "Toque",
       "components": "V, S, M (um cetro de prata no valor de 10 ou mais PO)",
@@ -5174,13 +4174,7 @@
       "slug": "protecao-contra-energia",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -5194,12 +4188,7 @@
       "slug": "protecao-contra-laminas",
       "level": 0,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -5213,12 +4202,7 @@
       "slug": "protecao-contra-veneno",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Druida", "Guardião", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -5232,10 +4216,7 @@
       "slug": "protecao-contra-a-morte",
       "level": 4,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -5249,13 +4230,7 @@
       "slug": "protecao-contra-o-bem-e-o-mal",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Bruxo",
-        "Druida",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Bruxo", "Druida", "Mago", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um pote de Água Benta no valor de 25 ou mais PO, que a magia consome)",
@@ -5269,11 +4244,7 @@
       "slug": "purificar-alimentos-e-bebidas",
       "level": 1,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Druida", "Paladino"],
       "casting_time": "Ação ou Ritual",
       "range": "3 metros",
       "components": "V, S",
@@ -5287,11 +4258,7 @@
       "slug": "queda-suave",
       "level": 1,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Reação, que você executa quando você ou uma criatura à sua vista a até 18 metros de você entra em queda",
       "range": "18 metros",
       "components": "V, M (uma pequena pena ou pedaço de penugem)",
@@ -5305,10 +4272,7 @@
       "slug": "raio-ardente",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -5322,9 +4286,7 @@
       "slug": "raio-guia",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -5338,9 +4300,7 @@
       "slug": "raio-lunar",
       "level": 2,
       "school": "Evocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S, M (uma folha de dama-da-noite)",
@@ -5354,9 +4314,7 @@
       "slug": "raio-mistico",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Bruxo"
-      ],
+      "classes": ["Bruxo"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -5370,10 +4328,7 @@
       "slug": "raio-nauseante",
       "level": 1,
       "school": "Necromancia",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -5387,12 +4342,7 @@
       "slug": "raio-solar",
       "level": 6,
       "school": "Evocação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma lupa)",
@@ -5406,11 +4356,7 @@
       "slug": "raio-de-bruxa",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um galho atingido por um raio)",
@@ -5424,10 +4370,7 @@
       "slug": "raio-de-fogo",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "V, S",
@@ -5441,10 +4384,7 @@
       "slug": "raio-de-gelo",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -5458,10 +4398,7 @@
       "slug": "raio-do-enfraquecimento",
       "level": 2,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -5475,11 +4412,7 @@
       "slug": "rajada-prismatica",
       "level": 7,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -5493,12 +4426,7 @@
       "slug": "rajada-de-veneno",
       "level": 0,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -5512,9 +4440,7 @@
       "slug": "receptaculo-arcano",
       "level": 6,
       "school": "Necromancia",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "1 minuto",
       "range": "Pessoal",
       "components": "V, S, M (uma gema, cristal ou relicário no valor de 500 ou mais PO)",
@@ -5528,9 +4454,7 @@
       "slug": "reencarnar",
       "level": 5,
       "school": "Necromancia",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "1 hora",
       "range": "Toque",
       "components": "V, S, M (óleos raros no valor de 1.000 ou mais PO, que a magia consome)",
@@ -5544,12 +4468,7 @@
       "slug": "reflexos",
       "level": 2,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -5563,9 +4482,7 @@
       "slug": "refugiar",
       "level": 7,
       "school": "Transmutação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (poeira de uma pedra preciosa no valor de 5.000 ou mais PO, que a magia consome)",
@@ -5579,11 +4496,7 @@
       "slug": "regeneracao",
       "level": 7,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida"],
       "casting_time": "1 minuto",
       "range": "Toque",
       "components": "V, S, M (uma conta de oração)",
@@ -5597,10 +4510,7 @@
       "slug": "relampago",
       "level": 3,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (um pouco de pelo e um cajado de cristal)",
@@ -5614,11 +4524,7 @@
       "slug": "remeter",
       "level": 3,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Mago"],
       "casting_time": "Ação",
       "range": "Ilimitado",
       "components": "V, S, M (um fio de cobre)",
@@ -5632,12 +4538,7 @@
       "slug": "remover-maldicao",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Bruxo",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Bruxo", "Mago", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -5651,13 +4552,7 @@
       "slug": "reparar",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "1 minuto",
       "range": "Toque",
       "components": "V, S, M (duas pedras-ímã)",
@@ -5671,11 +4566,7 @@
       "slug": "repouso-tranquilo",
       "level": 2,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Mago",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Mago", "Paladino"],
       "casting_time": "Ação ou Ritual",
       "range": "Toque",
       "components": "V, S, M (2 Peças de Cobre, que a magia consome)",
@@ -5689,9 +4580,7 @@
       "slug": "repreensao-diabolica",
       "level": 1,
       "school": "Evocação",
-      "classes": [
-        "Bruxo"
-      ],
+      "classes": ["Bruxo"],
       "casting_time": "Reação, que você realiza ao receber dano de uma criatura à sua vista e a até 18 metros de você",
       "range": "18 metros",
       "components": "V, S",
@@ -5705,10 +4594,7 @@
       "slug": "resistencia",
       "level": 0,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Clérigo", "Druida"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "",
@@ -5722,12 +4608,7 @@
       "slug": "respirar-na-agua",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Guardião", "Mago"],
       "casting_time": "Ação ou Ritual",
       "range": "9 metros",
       "components": "V, S, M (um pedaço de junco)",
@@ -5741,10 +4622,7 @@
       "slug": "ressurreicao",
       "level": 7,
       "school": "Necromancia",
-      "classes": [
-        "Bardo",
-        "Clérigo"
-      ],
+      "classes": ["Bardo", "Clérigo"],
       "casting_time": "1 hora",
       "range": "Toque",
       "components": "V, S, M (um diamante no valor de 1.000 ou mais PO, que a magia consome)",
@@ -5758,10 +4636,7 @@
       "slug": "ressurreicao-verdadeira",
       "level": 9,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Druida"
-      ],
+      "classes": ["Clérigo", "Druida"],
       "casting_time": "1 hora",
       "range": "Toque",
       "components": "V, S, M (diamantes no valor de 25.000 ou mais PO, que a magia consome)",
@@ -5775,13 +4650,7 @@
       "slug": "restauracao-maior",
       "level": 5,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Guardião", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (poeira de diamante no valor de 100 ou mais PO, que a magia consome)",
@@ -5795,13 +4664,7 @@
       "slug": "restauracao-menor",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Guardião", "Paladino"],
       "casting_time": "Ação Bônus",
       "range": "Toque",
       "components": "V, S",
@@ -5815,11 +4678,7 @@
       "slug": "retirada-acelerada",
       "level": 1,
       "school": "Transmutação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "V, S",
@@ -5833,11 +4692,7 @@
       "slug": "reviver-os-mortos",
       "level": 5,
       "school": "Necromancia",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Paladino"],
       "casting_time": "1 hora",
       "range": "Toque",
       "components": "V, S, M (um diamante no valor de 500 ou mais PO, que a magia consome)",
@@ -5851,12 +4706,7 @@
       "slug": "revivificar",
       "level": 3,
       "school": "Necromancia",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Guardião",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Druida", "Guardião", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um diamante no valor de 300 ou mais PO, que a magia consome)",
@@ -5870,11 +4720,7 @@
       "slug": "rogar-maldicao",
       "level": 3,
       "school": "Necromancia",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -5888,12 +4734,7 @@
       "slug": "salto",
       "level": 1,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Guardião", "Mago"],
       "casting_time": "Ação Bônus",
       "range": "Toque",
       "components": "",
@@ -5907,9 +4748,7 @@
       "slug": "santuario",
       "level": 1,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação Bônus",
       "range": "9 metros",
       "components": "V, S, M (o caco de um espelho)",
@@ -5923,9 +4762,7 @@
       "slug": "santuario-particular-de-mordenkainen",
       "level": 4,
       "school": "Abjuração",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "10 minutos",
       "range": "36 metros",
       "components": "V, S, M (uma folha fina de chumbo)",
@@ -5939,9 +4776,7 @@
       "slug": "saraivada-de-espinhos",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Guardião"
-      ],
+      "classes": ["Guardião"],
       "casting_time": "Ação Bônus, que você realiza imediatamente após atingir uma criatura com um ataque com arma à Distância",
       "range": "Pessoal",
       "components": "V",
@@ -5955,11 +4790,7 @@
       "slug": "semiplano",
       "level": 8,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "S",
@@ -5973,10 +4804,7 @@
       "slug": "sentido-feral",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação ou Ritual",
       "range": "Toque",
       "components": "S",
@@ -5990,11 +4818,7 @@
       "slug": "servo-invisivel",
       "level": 1,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Mago"],
       "casting_time": "Ação ou Ritual",
       "range": "18 metros",
       "components": "V, S, M (um pedaço de barbante e de madeira)",
@@ -6008,12 +4832,7 @@
       "slug": "sexto-sentido",
       "level": 9,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Druida", "Mago"],
       "casting_time": "1 minuto",
       "range": "Toque",
       "components": "V, S, M (uma pena de beija-flor)",
@@ -6027,11 +4846,7 @@
       "slug": "silencio",
       "level": 2,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Guardião"
-      ],
+      "classes": ["Bardo", "Clérigo", "Guardião"],
       "casting_time": "Ação ou Ritual",
       "range": "36 metros",
       "components": "V, S",
@@ -6045,11 +4860,7 @@
       "slug": "similaridade",
       "level": 5,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -6063,9 +4874,7 @@
       "slug": "simulacro",
       "level": 7,
       "school": "Ilusão",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "12 horas",
       "range": "Toque",
       "components": "V, S, M (rubi em pó no valor de 1.500 ou mais PO, que a magia consome)",
@@ -6079,12 +4888,7 @@
       "slug": "simular-morte",
       "level": 3,
       "school": "Necromancia",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Mago"],
       "casting_time": "Ação ou Ritual",
       "range": "Toque",
       "components": "V, S, M (uma pitada de terra de cemitério)",
@@ -6098,9 +4902,7 @@
       "slug": "sinal-de-esperanca",
       "level": 3,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, S",
@@ -6114,11 +4916,7 @@
       "slug": "sonho",
       "level": 5,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Mago"],
       "casting_time": "1 minuto",
       "range": "Especial",
       "components": "V, S, M (um punhado de areia)",
@@ -6132,11 +4930,7 @@
       "slug": "sono",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (uma pitada de areia ou pétalas de rosa)",
@@ -6150,10 +4944,7 @@
       "slug": "sopro-de-dragao",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação Bônus",
       "range": "Toque",
       "components": "V, S, M (uma pimenta)",
@@ -6167,12 +4958,7 @@
       "slug": "sugestao",
       "level": 2,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V, M (uma gota de mel)",
@@ -6186,11 +4972,7 @@
       "slug": "sugestao-em-massa",
       "level": 6,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, M (a língua de uma cobra)",
@@ -6204,12 +4986,7 @@
       "slug": "suplicio",
       "level": 8,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Druida", "Mago"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S, M (um chaveiro sem chaves)",
@@ -6223,9 +5000,7 @@
       "slug": "sussurros-dissonantes",
       "level": 1,
       "school": "Encantamento",
-      "classes": [
-        "Bardo"
-      ],
+      "classes": ["Bardo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V",
@@ -6239,12 +5014,7 @@
       "slug": "simbolo",
       "level": 7,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Clérigo", "Druida", "Mago"],
       "casting_time": "1 minuto",
       "range": "Toque",
       "components": "V, S, M (um diamante em pó no valor de 1.000 ou mais PO, que a magia consome)",
@@ -6258,11 +5028,7 @@
       "slug": "talho-mental",
       "level": 0,
       "school": "Encantamento",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V",
@@ -6276,9 +5042,7 @@
       "slug": "taumaturgia",
       "level": 0,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo"
-      ],
+      "classes": ["Clérigo"],
       "casting_time": "Ação",
       "range": "9 metros",
       "components": "V",
@@ -6292,10 +5056,7 @@
       "slug": "teia",
       "level": 2,
       "school": "Invocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S, M (um pouco de teia de aranha)",
@@ -6309,10 +5070,7 @@
       "slug": "telecinese",
       "level": 5,
       "school": "Transmutação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -6326,9 +5084,7 @@
       "slug": "telepatia",
       "level": 8,
       "school": "Adivinhação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "Ilimitado",
       "components": "V, S, M (um par de anéis de prata interligados)",
@@ -6342,11 +5098,7 @@
       "slug": "teleporte",
       "level": 7,
       "school": "Invocação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "3 metros",
       "components": "V",
@@ -6360,11 +5112,7 @@
       "slug": "tempestade-glacial",
       "level": 4,
       "school": "Evocação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "90 metros",
       "components": "V, S, M (uma luva)",
@@ -6378,10 +5126,7 @@
       "slug": "tempestade-radiante-de-jallarzi",
       "level": 5,
       "school": "Evocação",
-      "classes": [
-        "Bruxo",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Mago"],
       "casting_time": "Ação",
       "range": "36 metros",
       "components": "",
@@ -6395,9 +5140,7 @@
       "slug": "tempestade-da-vinganca",
       "level": 9,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "1,5 km",
       "components": "V, S",
@@ -6411,11 +5154,7 @@
       "slug": "tempestade-de-fogo",
       "level": 7,
       "school": "Evocação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro"],
       "casting_time": "Ação",
       "range": "45 metros",
       "components": "V, S",
@@ -6429,9 +5168,7 @@
       "slug": "tentaculos-negros-de-evard",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "27 metros",
       "components": "V, S, M (um tentáculo)",
@@ -6445,11 +5182,7 @@
       "slug": "terremoto",
       "level": 8,
       "school": "Transmutação",
-      "classes": [
-        "Clérigo",
-        "Druida",
-        "Feiticeiro"
-      ],
+      "classes": ["Clérigo", "Druida", "Feiticeiro"],
       "casting_time": "Ação",
       "range": "150 metros",
       "components": "V, S, M (uma rocha rachada)",
@@ -6463,12 +5196,7 @@
       "slug": "terreno-alucinatorio",
       "level": 4,
       "school": "Ilusão",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Druida", "Mago"],
       "casting_time": "10 minutos",
       "range": "90 metros",
       "components": "V, S, M (um cogumelo)",
@@ -6482,10 +5210,7 @@
       "slug": "toque-chocante",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -6499,11 +5224,7 @@
       "slug": "toque-necrotico",
       "level": 0,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S",
@@ -6517,11 +5238,7 @@
       "slug": "toque-vampirico",
       "level": 3,
       "school": "Necromancia",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S",
@@ -6535,9 +5252,7 @@
       "slug": "tranca-arcana",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Mago"
-      ],
+      "classes": ["Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (pó de ouro no valor de 25 ou mais PO, que a magia consome)",
@@ -6551,13 +5266,7 @@
       "slug": "transicao-planar",
       "level": 7,
       "school": "Invocação",
-      "classes": [
-        "Bruxo",
-        "Clérigo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Clérigo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma haste de metal bifurcada no valor de 250 ou mais PO e sintonizada a um plano de existência)",
@@ -6571,9 +5280,7 @@
       "slug": "transporte-via-plantas",
       "level": 6,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "Ação",
       "range": "3 metros",
       "components": "V, S",
@@ -6587,13 +5294,7 @@
       "slug": "trovao",
       "level": 0,
       "school": "Evocação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Druida",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Druida", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "S",
@@ -6607,9 +5308,7 @@
       "slug": "tsunami",
       "level": 8,
       "school": "Invocação",
-      "classes": [
-        "Druida"
-      ],
+      "classes": ["Druida"],
       "casting_time": "1 minuto",
       "range": "1,5 km",
       "components": "V, S",
@@ -6623,10 +5322,7 @@
       "slug": "turvar",
       "level": 2,
       "school": "Ilusão",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V",
@@ -6640,11 +5336,7 @@
       "slug": "ver-o-invisivel",
       "level": 2,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma pitada de talco)",
@@ -6658,13 +5350,7 @@
       "slug": "videncia",
       "level": 5,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Clérigo", "Druida", "Mago"],
       "casting_time": "10 minutos",
       "range": "Pessoal",
       "components": "V, S, M (um foco no valor de 1.000 ou mais PO, como uma bola de cristal, espelho ou fonte cheia de água)",
@@ -6678,10 +5364,7 @@
       "slug": "vigor-arcano",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação Bônus",
       "range": "Pessoal",
       "components": "",
@@ -6695,10 +5378,7 @@
       "slug": "vinha-agarradora",
       "level": 4,
       "school": "Invocação",
-      "classes": [
-        "Druida",
-        "Guardião"
-      ],
+      "classes": ["Druida", "Guardião"],
       "casting_time": "Ação Bônus",
       "range": "18 metros",
       "components": "V, S",
@@ -6712,13 +5392,7 @@
       "slug": "visao-da-verdade",
       "level": 6,
       "school": "Adivinhação",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Clérigo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Clérigo", "Feiticeiro", "Mago"],
       "casting_time": "1 ação",
       "range": "Toque",
       "components": "V, S, M (cogumelo em pó no valor de 25 ou mais PO, que a magia consome)",
@@ -6732,12 +5406,7 @@
       "slug": "visao-no-escuro",
       "level": 2,
       "school": "Transmutação",
-      "classes": [
-        "Druida",
-        "Feiticeiro",
-        "Guardião",
-        "Mago"
-      ],
+      "classes": ["Druida", "Feiticeiro", "Guardião", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma cenoura seca)",
@@ -6751,10 +5420,7 @@
       "slug": "vitalidade-vazia",
       "level": 1,
       "school": "Necromancia",
-      "classes": [
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Pessoal",
       "components": "V, S, M (uma gota de álcool)",
@@ -6768,11 +5434,7 @@
       "slug": "voo",
       "level": 3,
       "school": "Transmutação",
-      "classes": [
-        "Bruxo",
-        "Feiticeiro",
-        "Mago"
-      ],
+      "classes": ["Bruxo", "Feiticeiro", "Mago"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (uma pena)",
@@ -6786,10 +5448,7 @@
       "slug": "vinculo-de-protecao",
       "level": 2,
       "school": "Abjuração",
-      "classes": [
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "Toque",
       "components": "V, S, M (um par de anéis de platina no valor de 50 ou mais PO cada, que você e o alvo devem usar pela duração da magia)",
@@ -6803,9 +5462,7 @@
       "slug": "zombaria-perversa",
       "level": 0,
       "school": "Encantamento",
-      "classes": [
-        "Bardo"
-      ],
+      "classes": ["Bardo"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V",
@@ -6819,11 +5476,7 @@
       "slug": "zona-da-verdade",
       "level": 2,
       "school": "Encantamento",
-      "classes": [
-        "Bardo",
-        "Clérigo",
-        "Paladino"
-      ],
+      "classes": ["Bardo", "Clérigo", "Paladino"],
       "casting_time": "Ação",
       "range": "18 metros",
       "components": "V, S",
@@ -6837,13 +5490,7 @@
       "slug": "ancora-planar",
       "level": 5,
       "school": "Abjuração",
-      "classes": [
-        "Bardo",
-        "Bruxo",
-        "Clérigo",
-        "Druida",
-        "Mago"
-      ],
+      "classes": ["Bardo", "Bruxo", "Clérigo", "Druida", "Mago"],
       "casting_time": "1 hora",
       "range": "18 metros",
       "components": "V, S, M (uma joia no valor de 1.000 ou mais PO, que a magia consome)",

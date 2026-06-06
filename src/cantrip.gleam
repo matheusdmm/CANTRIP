@@ -1,3 +1,8 @@
+import cantrip/dotenv
+import cantrip/query
+import cantrip/session
+import cantrip/slots
+import cantrip/spell.{type Spell}
 import envoy
 import gleam/dynamic/decode
 import gleam/erlang/application
@@ -14,11 +19,6 @@ import gleam/set
 import gleam/string
 import mist
 import simplifile
-import cantrip/dotenv
-import cantrip/query
-import cantrip/session
-import cantrip/slots
-import cantrip/spell.{type Spell}
 import wisp
 import wisp/wisp_mist
 
@@ -58,7 +58,8 @@ pub fn main() -> Nil {
 fn host_from_env() -> String {
   //envoy.get("HOST") |> result.unwrap("127.0.0.1") //DEV BUILD
   //envoy.get("HOST") |> result.unwrap("0.0.0.0") //PROD BUILD
-  envoy.get("HOST") |> result.unwrap("127.0.0.1") //via .env / docker ENV
+  envoy.get("HOST") |> result.unwrap("127.0.0.1")
+  //via .env / docker ENV
 }
 
 fn port_from_env() -> Int {
@@ -88,6 +89,7 @@ fn json_error_to_string(err: json.DecodeError) -> String {
 
 pub fn handle_request(req: wisp.Request, ctx: Context) -> wisp.Response {
   use req <- middleware(req)
+  use <- wisp.serve_static(req, under: "/", from: ctx.priv_dir <> "/static")
   case wisp.path_segments(req) {
     [] -> serve_spa(ctx)
     ["api", "health"] -> health()
@@ -140,17 +142,18 @@ fn serve_spa(ctx: Context) -> wisp.Response {
 }
 
 fn list_classes(ctx: Context) -> wisp.Response {
-  let classes =
+  let regular =
     ctx.spells
     |> list.flat_map(fn(s) { s.classes })
     |> list.unique
     |> list.sort(string.compare)
+    |> list.map(fn(name) { #(name, spell.class_slug(name)) })
 
-  classes
-  |> json.array(of: fn(name) {
+  [#("Todas as Classes", "todas"), ..regular]
+  |> json.array(of: fn(entry) {
     json.object([
-      #("name", json.string(name)),
-      #("slug", json.string(spell.class_slug(name))),
+      #("name", json.string(entry.0)),
+      #("slug", json.string(entry.1)),
     ])
   })
   |> json.to_string
@@ -167,7 +170,8 @@ fn list_class_spells(
   let matching =
     ctx.spells
     |> list.filter(fn(s) {
-      list.any(s.classes, fn(c) { spell.class_slug(c) == class_slug })
+      class_slug == "todas"
+      || list.any(s.classes, fn(c) { spell.class_slug(c) == class_slug })
     })
     |> list.filter(fn(s) {
       case level_filter {
@@ -360,4 +364,3 @@ fn slot_table_to_json(t: slots.SlotTable) -> json.Json {
   let slots.SlotTable(xs) = t
   json.array(xs, json.int)
 }
-
