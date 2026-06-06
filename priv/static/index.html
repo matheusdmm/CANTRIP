@@ -179,6 +179,11 @@
                                 <span class="badge" x-text="spell.school"></span>
                                 <span class="badge" x-show="spell.ritual">Ritual</span>
                                 <span class="badge" x-show="spell.concentration">Concentração</span>
+                                <div class="spell-classes">
+                                    <template x-for="cls in spell.classes" :key="cls">
+                                        <span class="badge class-badge" x-text="cls"></span>
+                                    </template>
+                                </div>
                             </div>
                         </div>
                         <span class="chev"></span>
