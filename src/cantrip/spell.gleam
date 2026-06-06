@@ -82,6 +82,7 @@ fn fold_ascii(graphemes: List(String), acc: String) -> String {
   }
 }
 
+/// Matches the non latin keyboard with the proper names
 fn deaccent(g: String) -> String {
   case g {
     "á" | "â" | "ã" | "à" | "ä" -> "a"

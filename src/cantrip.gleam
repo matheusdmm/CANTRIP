@@ -14,6 +14,8 @@ import gleam/set
 import gleam/string
 import mist
 import simplifile
+import cantrip/dotenv
+import cantrip/query
 import cantrip/session
 import cantrip/slots
 import cantrip/spell.{type Spell}
@@ -25,7 +27,7 @@ pub type Context {
 }
 
 pub fn main() -> Nil {
-  load_dotenv(".env")
+  dotenv.load(".env")
   wisp.configure_logger()
   let secret_key_base = wisp.random_string(64)
 
@@ -84,7 +86,7 @@ fn json_error_to_string(err: json.DecodeError) -> String {
   }
 }
 
-fn handle_request(req: wisp.Request, ctx: Context) -> wisp.Response {
+pub fn handle_request(req: wisp.Request, ctx: Context) -> wisp.Response {
   use req <- middleware(req)
   case wisp.path_segments(req) {
     [] -> serve_spa(ctx)
@@ -160,7 +162,7 @@ fn list_class_spells(
   ctx: Context,
   class_slug: String,
 ) -> wisp.Response {
-  let level_filter = parse_level_query(wisp.get_query(req))
+  let level_filter = query.parse_level(wisp.get_query(req))
 
   let matching =
     ctx.spells
@@ -359,47 +361,3 @@ fn slot_table_to_json(t: slots.SlotTable) -> json.Json {
   json.array(xs, json.int)
 }
 
-fn parse_level_query(query: List(#(String, String))) -> Result(Int, Nil) {
-  use v <- result.try(list.key_find(query, "level"))
-  int.parse(v)
-}
-
-fn load_dotenv(path: String) -> Nil {
-  case simplifile.read(path) {
-    Error(_) -> Nil
-    Ok(raw) ->
-      raw
-      |> string.split("\n")
-      |> list.each(apply_dotenv_line)
-  }
-}
-
-fn apply_dotenv_line(line: String) -> Nil {
-  let trimmed = string.trim(line)
-  case trimmed == "" || string.starts_with(trimmed, "#") {
-    True -> Nil
-    False ->
-      case string.split_once(trimmed, "=") {
-        Error(_) -> Nil
-        Ok(#(key, value)) -> {
-          let key = string.trim(key)
-          let value = strip_quotes(string.trim(value))
-          case envoy.get(key) {
-            Ok(_) -> Nil
-            Error(_) -> envoy.set(key, value)
-          }
-        }
-      }
-  }
-}
-
-fn strip_quotes(s: String) -> String {
-  let pairs = [#("\"", "\""), #("'", "'")]
-  list.fold(pairs, s, fn(acc, p) {
-    let #(open, close) = p
-    case string.starts_with(acc, open) && string.ends_with(acc, close) {
-      True -> acc |> string.drop_start(1) |> string.drop_end(1)
-      False -> acc
-    }
-  })
-}

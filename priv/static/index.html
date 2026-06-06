@@ -153,21 +153,49 @@
         }
 
         @keyframes spin {
-            to { transform: rotate(360deg); }
+            to {
+                transform: rotate(360deg);
+            }
         }
 
         .spinner {
-            width: 15px;
-            height: 15px;
-            border: 2px solid var(--border);
+            width: 30px;
+            height: 30px;
+            border: 3px solid var(--border);
             border-top-color: var(--accent);
             border-radius: 50%;
             animation: spin 0.65s linear infinite;
-            flex-shrink: 0;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .loading-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            padding: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.14);
+            display: flex;
         }
 
         .spell-card {
             --animate-duration: 0.35s;
+        }
+
+        .toast {
+            --animate-duration: 0.4s;
+        }
+
+        .slot-col {
+            --animate-duration: 0.5s;
         }
 
         .control-row {
@@ -178,8 +206,14 @@
             margin-bottom: 8px;
         }
 
-        .level-select { display: block; width: 80px; }
-        .level-input  { display: none; }
+        .level-select {
+            display: block;
+            width: 80px;
+        }
+
+        .level-input {
+            display: none;
+        }
 
         .control-row select,
         .control-row input[type="number"],
@@ -713,8 +747,13 @@
                 align-items: end;
             }
 
-            .level-select { display: none; }
-            .level-input  { display: block; }
+            .level-select {
+                display: none;
+            }
+
+            .level-input {
+                display: block;
+            }
 
             .control-row .rest-tablet {
                 display: flex;
@@ -783,22 +822,29 @@
         <div class="sticky">
             <h1>
                 CANTRIP
-                <div style="display:flex;align-items:center;gap:8px">
-                <span class="spinner" x-show="loading" x-cloak></span>
                 <button class="theme-toggle" @click="toggleTheme()"
                     :title="theme === 'dark' ? 'Tema claro' : 'Tema escuro'">
                     <template x-if="theme === 'dark'">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <circle cx="12" cy="12" r="5" />
+                            <line x1="12" y1="1" x2="12" y2="3" />
+                            <line x1="12" y1="21" x2="12" y2="23" />
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                            <line x1="1" y1="12" x2="3" y2="12" />
+                            <line x1="21" y1="12" x2="23" y2="12" />
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
                         </svg>
                     </template>
                     <template x-if="theme !== 'dark'">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
                         </svg>
                     </template>
                 </button>
-                </div>
             </h1>
 
             <div class="control-row">
@@ -818,9 +864,7 @@
                         </template>
                     </select>
                     <input id="lvl" class="level-input" type="number" pattern="[0-9]*" min="1" max="20"
-                        x-model.number="levelInput"
-                        @change="setLevel()"
-                        @keydown.enter.prevent="setLevel()">
+                        x-model.number="levelInput" @change="setLevel()" @keydown.enter.prevent="setLevel()">
                 </div>
                 <div class="rest-tablet" x-show="session.level !== null">
                     <button @click="longRest()">Descanso Longo</button>
@@ -833,12 +877,15 @@
                 <button @click="shortRest()" x-show="classSlug === 'bruxo'">Descanso Curto</button>
             </div>
 
-            <div x-show="session.level !== null && activeSlots.length > 0">
+            <div x-show="session.level !== null && activeSlots.length > 0"
+                x-transition:enter="animate__animated animate__fadeInDown animate__faster">
                 <div class="slots">
                     <template x-for="col in activeSlots" :key="col.spellLevel">
                         <div class="slot-col" :class="{
               'has-slots': col.remaining > 0,
-              'spent': col.remaining === 0
+              'spent': col.remaining === 0,
+              'animate__animated': pulsedSlot === col.spellLevel || pulsedSlot === 'all',
+              'animate__pulse': pulsedSlot === col.spellLevel || pulsedSlot === 'all'
             }" @click="col.remaining > 0 && cast(col.spellLevel)">
                             <span class="slot-label" x-text="'L' + col.spellLevel"></span>
                             <div class="slot-pips">
@@ -854,8 +901,13 @@
                 </div>
             </div>
 
-            <div class="no-level" x-show="session.level === null">
-                Set your caster level to see slots.
+            <div class="no-level" x-show="session.level === null"
+                x-transition:enter="animate__animated animate__fadeIn animate__faster">
+                Defina seu nível para ver os slots.
+            </div>
+            <div class="no-level" x-show="session.level !== null && activeSlots.length === 0"
+                x-transition:enter="animate__animated animate__fadeIn animate__faster">
+                Nenhum slot neste nível.
             </div>
         </div>
 
@@ -867,7 +919,8 @@
             <button class="tab" :class="tab === 'at-hand' ? 'active' : ''" @click="tab = 'at-hand'">
                 Spells Preparadas <span class="count" x-text="'(' + session.at_hand.length + ')'"></span>
             </button>
-            <div class="tabs-actions" x-show="session.at_hand.length > 0">
+            <div class="tabs-actions" x-show="session.at_hand.length > 0"
+                x-transition:enter="animate__animated animate__fadeIn animate__faster">
                 <button class="ghost" @click="clearAtHand()">Limpar</button>
             </div>
         </div>
@@ -893,7 +946,8 @@
         <!-- Spell list -->
         <div class="spell-list">
             <template x-for="spell in filteredSpells" :key="spell.slug">
-                <div class="spell-card animate__animated animate__fadeIn" :class="{ 'at-hand': isAtHand(spell), 'open': expanded[spell.slug] }">
+                <div class="spell-card animate__animated animate__fadeIn"
+                    :class="{ 'at-hand': isAtHand(spell), 'open': expanded[spell.slug] }">
                     <div class="spell-head" @click="toggleExpand(spell)">
                         <div class="spell-head-text">
                             <h3 class="spell-name" x-text="spell.name"></h3>
@@ -927,7 +981,8 @@
                         </div>
                     </div>
 
-                    <div class="description" x-show="expanded[spell.slug]" x-text="spell.description"></div>
+                    <div class="description" x-show="expanded[spell.slug]" x-text="spell.description"
+                        x-transition:enter="animate__animated animate__fadeIn animate__faster"></div>
 
                     <div class="spell-actions">
                         <button class="bookmark" :class="{ on: isAtHand(spell) }" @click.stop="toggleAtHand(spell)">
@@ -942,14 +997,22 @@
                 </div>
             </template>
 
-            <div class="empty-state" x-show="filteredSpells.length === 0">
-                <strong x-text="tab === 'at-hand' ? 'Nothing at hand yet' : 'No spells match'"></strong>
+            <div class="empty-state" x-show="filteredSpells.length === 0"
+                x-transition:enter="animate__animated animate__fadeIn animate__faster">
+                <strong x-text="tab === 'at-hand' ? 'Nada Salvo ainda' : 'Nenhuma magia encontrada'"></strong>
                 <span
-                    x-text="tab === 'at-hand' ? 'Use the Save button on any spell to add it here.' : 'Try adjusting the search or level filter.'"></span>
+                    x-text="tab === 'at-hand' ? 'Use o botão de 'Salvar' para adicionar algo aqui.' : 'Verifique o nome da spell e tente novamente.'"></span>
             </div>
         </div>
 
-        <div class="toast" x-show="toast" x-text="toast" x-transition></div>
+        <div class="loading-overlay" x-show="loading">
+            <div class="loading-card">
+                <span class="spinner"></span>
+            </div>
+        </div>
+
+        <div class="toast" x-show="toast" x-text="toast" x-transition:enter="animate__animated animate__bounceInUp"
+            x-transition:leave="animate__animated animate__fadeOutDown"></div>
 
         <footer class="footer">
             CANTRIP · feito por
@@ -973,6 +1036,7 @@
                 toastTimer: null,
                 theme: 'light',
                 loading: false,
+                pulsedSlot: null,
 
                 foldDiacritics(s) {
                     return s.normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -1002,6 +1066,7 @@
                         } else {
                             const savedLevel = this.storageGet(`cantrip.levelInput.${this.classSlug}`);
                             if (savedLevel !== null) this.levelInput = parseInt(savedLevel, 10) || 1;
+                            if (!this.levelInput || this.levelInput < 1) this.levelInput = 1;
                             await this.setLevel();
                         }
                     } finally {
@@ -1049,6 +1114,8 @@
                         if (!r.ok) { this.flash((await r.json()).error || 'Cast failed'); return; }
                         this.session = await r.json();
                         this.saveLocal();
+                        this.pulsedSlot = spellLevel;
+                        setTimeout(() => { this.pulsedSlot = null; }, 600);
                     } finally {
                         this.loading = false;
                     }
@@ -1061,6 +1128,8 @@
                         if (!r.ok) { this.flash((await r.json()).error || 'Long rest failed'); return; }
                         this.session = await r.json();
                         this.saveLocal();
+                        this.pulsedSlot = 'all';
+                        setTimeout(() => { this.pulsedSlot = null; }, 600);
                     } finally {
                         this.loading = false;
                     }
@@ -1072,6 +1141,8 @@
                         if (!r.ok) { this.flash((await r.json()).error || 'Short rest failed'); return; }
                         this.session = await r.json();
                         this.saveLocal();
+                        this.pulsedSlot = 'all';
+                        setTimeout(() => { this.pulsedSlot = null; }, 600);
                     } finally {
                         this.loading = false;
                     }
