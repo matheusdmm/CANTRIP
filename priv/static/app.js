@@ -1,7 +1,7 @@
 function app() {
   return {
     classes: [],
-    classSpells: [],
+    allSpells: [],
     classSlug: 'mago',
     levelInput: 5,
     session: {
@@ -28,7 +28,7 @@ function app() {
     async init() {
       this.theme =
         document.documentElement.getAttribute('data-theme') || 'light';
-      await this.loadClasses();
+      await Promise.all([this.loadClasses(), this.loadAllSpells()]);
       const sharedSpell = new URLSearchParams(window.location.search).get('spell');
       if (sharedSpell) {
         this.classSlug = 'todas';
@@ -61,10 +61,9 @@ function app() {
         this.expanded = {};
         this.storageSet('cantrip.activeClass', this.classSlug);
         if (this.classSlug === 'todas') {
-          await this.loadClassSpells();
           this.session = { level: null, max_slots: [], slots_remaining: [], at_hand: [] };
         } else {
-          await Promise.all([this.loadClassSpells(), this.loadSession()]);
+          await this.loadSession();
           await this.rehydrate();
           if (this.session.level !== null) {
             this.levelInput = this.session.level;
@@ -87,9 +86,9 @@ function app() {
       const r = await fetch('/classes');
       this.classes = await r.json();
     },
-    async loadClassSpells() {
-      const r = await fetch(`/classes/${this.classSlug}/spells`);
-      this.classSpells = r.ok ? await r.json() : [];
+    async loadAllSpells() {
+      const r = await fetch('/classes/todas/spells');
+      this.allSpells = r.ok ? await r.json() : [];
     },
     async loadSession() {
       const r = await fetch(`/classes/${this.classSlug}/session`);
@@ -253,6 +252,15 @@ function app() {
       }, 3000);
     },
 
+    get classSpells() {
+      if (this.classSlug === 'todas') return this.allSpells;
+      return this.allSpells.filter((s) =>
+        s.classes.some(
+          (c) => this.foldDiacritics(c.toLowerCase()) === this.classSlug,
+        ),
+      );
+    },
+
     /** Slot columns to show — only spell levels where max > 0. */
     get activeSlots() {
       return this.session.max_slots
@@ -265,12 +273,16 @@ function app() {
     },
 
     get filteredSpells() {
-      const pool =
-        this.tab === 'at-hand'
-          ? this.classSpells.filter((s) =>
-              this.session.at_hand.includes(s.slug),
-            )
-          : this.classSpells;
+      let pool;
+      if (this.tab === 'at-hand') {
+        pool = this.allSpells.filter((s) =>
+          this.session.at_hand.includes(s.slug),
+        );
+      } else if (this.search.trim()) {
+        pool = this.allSpells;
+      } else {
+        pool = this.classSpells;
+      }
 
       const q = this.foldDiacritics(this.search.trim().toLowerCase());
       const lvl =
