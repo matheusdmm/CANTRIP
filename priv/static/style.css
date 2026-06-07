@@ -229,7 +229,7 @@ input[type='search'] {
   color: var(--text);
   padding: 0 12px;
   border-radius: var(--radius-sm);
-  font-size: 15px;
+  font-size: 16px;
   font-family: inherit;
   width: 100%;
   transition: border-color var(--transition);
@@ -271,6 +271,7 @@ button {
   font-size: 14px;
   font-family: inherit;
   cursor: pointer;
+  touch-action: manipulation;
   transition:
     background var(--transition),
     border-color var(--transition),
