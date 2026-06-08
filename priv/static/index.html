@@ -89,7 +89,7 @@
                         x-model.number="levelInput" @change="setLevel()" @keydown.enter.prevent="setLevel()">
                 </div>
                 <div class="rest-tablet" x-show="session.level !== null">
-                    <button @click="longRest()">Descanso Longo</button>
+                    <button @click="startWithUndo('Descanso Longo...', () => longRest())">Descanso Longo</button>
                     <button @click="shortRest()" x-show="classSlug === 'bruxo'">Descanso Curto</button>
                 </div>
             </div>
@@ -144,7 +144,7 @@
             </button>
             <div class="tabs-actions" x-show="session.at_hand.length > 0"
                 x-transition:enter="animate__animated animate__fadeIn animate__faster">
-                <button class="ghost" @click="clearAtHand()">Limpar</button>
+                <button class="ghost" @click="startWithUndo('Limpando...', () => clearAtHand())">Limpar</button>
             </div>
         </div>
 
@@ -180,7 +180,7 @@
                                 <span class="badge" x-text="spell.school"></span>
                                 <span class="badge" x-show="spell.ritual">Ritual</span>
                                 <span class="badge" x-show="spell.concentration">Concentração</span>
-                                <div class="spell-classes">
+                                <div class="spell-classes" x-show="classSlug === 'todas'">
                                     <template x-for="cls in spell.classes" :key="cls">
                                         <span class="badge class-badge" x-text="cls"></span>
                                     </template>
@@ -251,9 +251,12 @@
             </div>
         </div>
 
-        <div class="toast" :class="{ 'toast-success': toastKind === 'success' }" x-show="toast" x-text="toast"
+        <div class="toast" :class="{ 'toast-success': toastKind === 'success', 'toast-warning': toastKind === 'warning' }" x-show="toast"
             x-transition:enter="animate__animated animate__bounceInUp"
-            x-transition:leave="animate__animated animate__fadeOutDown"></div>
+            x-transition:leave="animate__animated animate__fadeOutDown">
+            <span x-text="toast"></span>
+            <button x-show="undoPending" @click.stop="cancelUndo()" class="toast-undo">Desfazer</button>
+        </div>
 
         <footer class="footer">
             CANTRIP · feito por

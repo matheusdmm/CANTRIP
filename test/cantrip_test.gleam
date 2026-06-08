@@ -755,3 +755,154 @@ pub fn http_unknown_route_404_test() {
     |> cantrip.handle_request(test_ctx())
   resp.status |> should.equal(404)
 }
+
+// ── session.restore ───────────────────────────────────────────────────────────
+
+pub fn session_restore_sets_level_test() {
+  let assert Ok(handle) = session.start()
+  let s =
+    session.restore(
+      handle,
+      "mago",
+      5,
+      slots.SlotTable([2, 1, 0, 0, 0, 0, 0, 0, 0]),
+      set.new(),
+    )
+  s.level |> should.equal(Some(5))
+}
+
+pub fn session_restore_preserves_slots_remaining_test() {
+  let assert Ok(handle) = session.start()
+  let remaining = slots.SlotTable([2, 1, 0, 0, 0, 0, 0, 0, 0])
+  let s = session.restore(handle, "mago", 5, remaining, set.new())
+  slots.count_at(s.slots_remaining, 1) |> should.equal(2)
+  slots.count_at(s.slots_remaining, 2) |> should.equal(1)
+  slots.count_at(s.slots_remaining, 3) |> should.equal(0)
+}
+
+pub fn session_restore_max_slots_from_level_not_remaining_test() {
+  let assert Ok(handle) = session.start()
+  let partial = slots.SlotTable([1, 0, 0, 0, 0, 0, 0, 0, 0])
+  let s = session.restore(handle, "mago", 5, partial, set.new())
+  slots.count_at(s.max_slots, 1) |> should.equal(4)
+  slots.count_at(s.max_slots, 2) |> should.equal(3)
+  slots.count_at(s.max_slots, 3) |> should.equal(2)
+}
+
+pub fn session_restore_preserves_at_hand_test() {
+  let assert Ok(handle) = session.start()
+  let at_hand = set.from_list(["bola-de-fogo", "escudo"])
+  let s = session.restore(handle, "mago", 5, slots.empty(), at_hand)
+  set.contains(s.at_hand, "bola-de-fogo") |> should.be_true()
+  set.contains(s.at_hand, "escudo") |> should.be_true()
+}
+
+pub fn session_restore_unknown_class_returns_empty_test() {
+  let assert Ok(handle) = session.start()
+  let s =
+    session.restore(handle, "cavaleiro", 5, slots.empty(), set.new())
+  s.level |> should.equal(None)
+}
+
+pub fn session_restore_persists_across_calls_test() {
+  let assert Ok(handle) = session.start()
+  let remaining = slots.SlotTable([1, 1, 0, 0, 0, 0, 0, 0, 0])
+  let _ = session.restore(handle, "mago", 5, remaining, set.new())
+  let s = session.get(handle, "mago")
+  slots.count_at(s.slots_remaining, 1) |> should.equal(1)
+}
+
+pub fn session_restore_then_cast_works_test() {
+  let assert Ok(handle) = session.start()
+  let remaining = slots.SlotTable([3, 2, 0, 0, 0, 0, 0, 0, 0])
+  let _ = session.restore(handle, "mago", 5, remaining, set.new())
+  let assert Ok(s) = session.cast(handle, "mago", 1)
+  slots.count_at(s.slots_remaining, 1) |> should.equal(2)
+}
+
+pub fn session_restore_then_long_rest_resets_to_max_test() {
+  let assert Ok(handle) = session.start()
+  let partial = slots.SlotTable([1, 0, 0, 0, 0, 0, 0, 0, 0])
+  let _ = session.restore(handle, "mago", 5, partial, set.new())
+  let assert Ok(s) = session.long_rest(handle, "mago")
+  slots.count_at(s.slots_remaining, 1) |> should.equal(4)
+}
+
+// ── HTTP restore endpoint ─────────────────────────────────────────────────────
+
+pub fn http_restore_session_test() {
+  let ctx = test_ctx()
+  let resp =
+    simulate.request(http.Post, "/classes/mago/session/restore")
+    |> simulate.json_body(
+      json.object([
+        #("level", json.int(5)),
+        #(
+          "slots_remaining",
+          json.array([2, 1, 0, 0, 0, 0, 0, 0, 0], json.int),
+        ),
+        #("at_hand", json.array(["bola-de-fogo"], json.string)),
+      ]),
+    )
+    |> cantrip.handle_request(ctx)
+  resp.status |> should.equal(200)
+  let body = simulate.read_body(resp)
+  body |> string.contains("\"level\":5") |> should.be_true()
+  body |> string.contains("bola-de-fogo") |> should.be_true()
+}
+
+pub fn http_restore_session_preserves_slots_test() {
+  let ctx = test_ctx()
+  let resp =
+    simulate.request(http.Post, "/classes/mago/session/restore")
+    |> simulate.json_body(
+      json.object([
+        #("level", json.int(5)),
+        #(
+          "slots_remaining",
+          json.array([2, 1, 0, 0, 0, 0, 0, 0, 0], json.int),
+        ),
+        #("at_hand", json.array([], json.string)),
+      ]),
+    )
+    |> cantrip.handle_request(ctx)
+  let body = simulate.read_body(resp)
+  body
+  |> string.contains("\"slots_remaining\":[2,1,0,0,0,0,0,0,0]")
+  |> should.be_true()
+}
+
+pub fn http_restore_session_missing_field_400_test() {
+  let ctx = test_ctx()
+  let resp =
+    simulate.request(http.Post, "/classes/mago/session/restore")
+    |> simulate.json_body(json.object([#("level", json.int(5))]))
+    |> cantrip.handle_request(ctx)
+  resp.status |> should.equal(400)
+}
+
+pub fn http_restore_session_wrong_method_405_test() {
+  let ctx = test_ctx()
+  let resp =
+    simulate.request(http.Get, "/classes/mago/session/restore")
+    |> cantrip.handle_request(ctx)
+  resp.status |> should.equal(405)
+}
+
+pub fn http_restore_session_unknown_class_returns_empty_test() {
+  let ctx = test_ctx()
+  let resp =
+    simulate.request(http.Post, "/classes/cavaleiro/session/restore")
+    |> simulate.json_body(
+      json.object([
+        #("level", json.int(5)),
+        #("slots_remaining", json.array([], json.int)),
+        #("at_hand", json.array([], json.string)),
+      ]),
+    )
+    |> cantrip.handle_request(ctx)
+  resp.status |> should.equal(200)
+  simulate.read_body(resp)
+  |> string.contains("\"level\":null")
+  |> should.be_true()
+}

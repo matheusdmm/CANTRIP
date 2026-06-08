@@ -272,16 +272,20 @@ button {
   font-family: inherit;
   cursor: pointer;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition:
     background var(--transition),
     border-color var(--transition),
-    color var(--transition);
+    color var(--transition),
+    transform 80ms ease,
+    opacity 80ms ease;
   min-height: 40px;
   white-space: nowrap;
 }
 
 button:active:not(:disabled) {
   background: var(--surface-2);
+  transform: scale(0.95);
 }
 
 button:disabled {
@@ -299,6 +303,7 @@ button.primary {
 button.primary:active:not(:disabled) {
   background: var(--accent-hover);
   border-color: var(--accent-hover);
+  transform: scale(0.94);
 }
 
 button.ghost {
@@ -312,6 +317,7 @@ button.ghost {
 
 button.ghost:active:not(:disabled) {
   background: var(--surface-2);
+  transform: scale(0.95);
 }
 
 /* ----- slot grid ----- */
@@ -332,7 +338,10 @@ button.ghost:active:not(:disabled) {
   border: 1px solid var(--accent-dim);
   border-radius: var(--radius-sm);
   min-height: var(--tap);
-  transition: border-color var(--transition);
+  -webkit-tap-highlight-color: transparent;
+  transition:
+    border-color var(--transition),
+    transform 80ms ease;
 }
 
 .slot-col.spent {
@@ -342,6 +351,7 @@ button.ghost:active:not(:disabled) {
 
 .slot-col.has-slots:active {
   border-color: var(--accent);
+  transform: scale(0.93);
 }
 
 .slot-col.has-slots {
@@ -369,11 +379,16 @@ button.ghost:active:not(:disabled) {
   border-radius: 50%;
   background: var(--accent);
   box-sizing: border-box;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease;
 }
 
 .pip.spent {
   background: transparent;
   border: 1.5px solid var(--muted-2);
+  transform: scale(0.85);
 }
 
 .slot-count {
@@ -485,6 +500,11 @@ button.ghost:active:not(:disabled) {
   gap: 12px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+  transition: opacity 80ms ease;
+}
+
+.spell-head:active {
+  opacity: 0.6;
 }
 
 .spell-head-text {
@@ -638,6 +658,12 @@ button.ghost:active:not(:disabled) {
   font-size: 15px;
 }
 
+@keyframes bookmark-pop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
 /* Bookmark button */
 .bookmark {
   display: inline-flex;
@@ -655,17 +681,20 @@ button.ghost:active:not(:disabled) {
   transition:
     color var(--transition),
     background var(--transition),
-    border-color var(--transition);
+    border-color var(--transition),
+    transform 80ms ease;
 }
 
 .bookmark:active {
   background: var(--surface-2);
+  transform: scale(0.95);
 }
 
 .bookmark.on {
   color: var(--accent);
   border-color: var(--accent-dim);
   background: var(--accent-soft);
+  animation: bookmark-pop 200ms ease;
 }
 
 .bookmark-dot {
@@ -725,6 +754,22 @@ button.ghost:active:not(:disabled) {
   font-size: 13px;
   z-index: 50;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.toast-undo {
+  flex-shrink: 0;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid var(--warning);
+  background: transparent;
+  color: var(--warning);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 /* ----- tablet (≥640px) ----- */

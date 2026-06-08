@@ -45,6 +45,13 @@ type Msg {
   AddAtHand(class: String, spell_slug: String, reply: Subject(Session))
   RemoveAtHand(class: String, spell_slug: String, reply: Subject(Session))
   ClearAtHand(class: String, reply: Subject(Session))
+  Restore(
+    class: String,
+    level: Int,
+    slots_remaining: SlotTable,
+    at_hand: Set(String),
+    reply: Subject(Session),
+  )
 }
 
 pub fn start() -> Result(Handle, actor.StartError) {
@@ -171,6 +178,26 @@ fn handle_message(state: State, msg: Msg) -> actor.Next(State, Msg) {
       process.send(reply, updated)
       actor.continue(put(state, class, updated))
     }
+
+    Restore(class, level, slots_remaining, at_hand, reply) -> {
+      case slots.max_slots(class, level) {
+        Ok(max) -> {
+          let session =
+            Session(
+              level: Some(level),
+              max_slots: max,
+              slots_remaining: slots_remaining,
+              at_hand: at_hand,
+            )
+          process.send(reply, session)
+          actor.continue(put(state, class, session))
+        }
+        Error(_) -> {
+          process.send(reply, empty_session())
+          actor.continue(state)
+        }
+      }
+    }
   }
 }
 
@@ -238,4 +265,18 @@ pub fn remove_at_hand(
 
 pub fn clear_at_hand(handle: Handle, class: String) -> Session {
   process.call(handle.subject, 100, ClearAtHand(class, _))
+}
+
+pub fn restore(
+  handle: Handle,
+  class: String,
+  level: Int,
+  slots_remaining: SlotTable,
+  at_hand: Set(String),
+) -> Session {
+  process.call(
+    handle.subject,
+    100,
+    Restore(class, level, slots_remaining, at_hand, _),
+  )
 }

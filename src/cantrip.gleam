@@ -98,6 +98,10 @@ pub fn handle_request(req: wisp.Request, ctx: Context) -> wisp.Response {
     ["spells", slug] -> get_spell(ctx, slug)
 
     ["classes", class_slug, "session"] -> session_route(req, ctx, class_slug)
+    ["classes", class_slug, "session", "restore"] ->
+      restore_session(req, ctx, class_slug)
+    ["classes", class_slug, "session", "init"] ->
+      init_session(req, ctx, class_slug)
     ["classes", class_slug, "cast"] -> cast_route(req, ctx, class_slug)
     ["classes", class_slug, "long-rest"] ->
       rest_route(req, ctx, class_slug, session.long_rest)
@@ -138,6 +142,76 @@ fn serve_spa(ctx: Context) -> wisp.Response {
   case simplifile.read(ctx.priv_dir <> "/static/index.html") {
     Ok(html) -> wisp.html_response(html, 200)
     Error(_) -> wisp.internal_server_error()
+  }
+}
+
+fn restore_session(
+  req: wisp.Request,
+  ctx: Context,
+  class_slug: String,
+) -> wisp.Response {
+  use <- wisp.require_method(req, http.Post)
+  use body <- wisp.require_json(req)
+  let decoder = {
+    use level <- decode.field("level", decode.int)
+    use remaining <- decode.field("slots_remaining", decode.list(decode.int))
+    use at_hand <- decode.field("at_hand", decode.list(decode.string))
+    decode.success(#(level, remaining, at_hand))
+  }
+  case decode.run(body, decoder) {
+    Ok(#(level, remaining_list, at_hand_list)) -> {
+      let slots_remaining = slots.SlotTable(remaining_list)
+      let at_hand = set.from_list(at_hand_list)
+      let s =
+        session.restore(ctx.sessions, class_slug, level, slots_remaining, at_hand)
+      ok_json(session_to_json(s))
+    }
+    Error(_) ->
+      wisp.bad_request("expected { level, slots_remaining, at_hand }")
+  }
+}
+
+fn init_session(
+  req: wisp.Request,
+  ctx: Context,
+  class_slug: String,
+) -> wisp.Response {
+  use <- wisp.require_method(req, http.Post)
+  use body <- wisp.require_json(req)
+  let current = session.get(ctx.sessions, class_slug)
+  case current.level {
+    Some(_) -> ok_json(session_to_json(current))
+    None -> {
+      let decoder = {
+        use level <- decode.field("level", decode.optional(decode.int))
+        use remaining <- decode.field(
+          "slots_remaining",
+          decode.optional(decode.list(decode.int)),
+        )
+        use at_hand <- decode.field(
+          "at_hand",
+          decode.optional(decode.list(decode.string)),
+        )
+        decode.success(#(level, remaining, at_hand))
+      }
+      case decode.run(body, decoder) {
+        Ok(#(Some(level), remaining, at_hand_list)) -> {
+          let slots_remaining =
+            slots.SlotTable(
+              option.unwrap(remaining, [0, 0, 0, 0, 0, 0, 0, 0, 0]),
+            )
+          let at_hand = set.from_list(option.unwrap(at_hand_list, []))
+          let s =
+            session.restore(ctx.sessions, class_slug, level, slots_remaining, at_hand)
+          ok_json(session_to_json(s))
+        }
+        Ok(#(None, _, _)) -> ok_json(session_to_json(current))
+        Error(_) ->
+          wisp.bad_request(
+            "expected { level: int|null, slots_remaining: int[]|null, at_hand: string[]|null }",
+          )
+      }
+    }
   }
 }
 

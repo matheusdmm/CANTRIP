@@ -17,6 +17,8 @@ function app() {
     toast: '',
     toastKind: '',
     toastTimer: null,
+    undoPending: false,
+    undoTimer: null,
     theme: 'light',
     loading: false,
     pulsedSlot: null,
@@ -30,22 +32,21 @@ function app() {
         document.documentElement.getAttribute('data-theme') || 'light';
       await Promise.all([this.loadClasses(), this.loadAllSpells()]);
       const sharedSpell = new URLSearchParams(window.location.search).get('spell');
-      if (sharedSpell) {
+      const savedClass = this.storageGet('cantrip.activeClass');
+      const hasSavedClass = savedClass && this.classes.find((c) => c.slug === savedClass);
+      if (hasSavedClass) {
+        this.classSlug = savedClass;
+      } else if (sharedSpell) {
         this.classSlug = 'todas';
-      } else {
-        const savedClass = this.storageGet('cantrip.activeClass');
-        if (savedClass && this.classes.find((c) => c.slug === savedClass)) {
-          this.classSlug = savedClass;
-        } else if (
-          this.classes.length &&
-          !this.classes.find((c) => c.slug === this.classSlug)
-        ) {
-          this.classSlug = this.classes[0].slug;
-        }
+      } else if (
+        this.classes.length &&
+        !this.classes.find((c) => c.slug === this.classSlug)
+      ) {
+        this.classSlug = this.classes[0].slug;
       }
       await this.onClassChange();
       if (sharedSpell) {
-        const found = this.classSpells.find((s) => s.slug === sharedSpell);
+        const found = this.allSpells.find((s) => s.slug === sharedSpell);
         if (found) this.search = found.name;
         this.expanded = { ...this.expanded, [sharedSpell]: true };
         setTimeout(() => {
@@ -63,8 +64,7 @@ function app() {
         if (this.classSlug === 'todas') {
           this.session = { level: null, max_slots: [], slots_remaining: [], at_hand: [] };
         } else {
-          await this.loadSession();
-          await this.rehydrate();
+          await this.initSession();
           if (this.session.level !== null) {
             this.levelInput = this.session.level;
           } else {
@@ -90,9 +90,21 @@ function app() {
       const r = await fetch('/classes/todas/spells');
       this.allSpells = r.ok ? await r.json() : [];
     },
-    async loadSession() {
-      const r = await fetch(`/classes/${this.classSlug}/session`);
-      this.session = await r.json();
+    async initSession() {
+      const saved = this.loadLocal();
+      const r = await fetch(`/classes/${this.classSlug}/session/init`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          level: saved?.level ?? null,
+          slots_remaining: saved?.slots_remaining ?? null,
+          at_hand: saved?.at_hand ?? null,
+        }),
+      });
+      if (r.ok) {
+        this.session = await r.json();
+        this.saveLocal();
+      }
     },
 
     async setLevel() {
@@ -115,70 +127,68 @@ function app() {
     },
 
     async cast(spellLevel) {
-      this.loading = true;
-      try {
-        const r = await fetch(`/classes/${this.classSlug}/cast`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ spell_level: spellLevel }),
-        });
-        if (!r.ok) {
-          this.flash((await r.json()).error || 'Cast failed');
-          return;
-        }
-        this.session = await r.json();
-        this.saveLocal();
-        if (this.session.slots_remaining[spellLevel - 1] === 0) {
-          this.flash(`Slots de nível ${spellLevel} esgotados!`, 'warning');
-        }
-        this.pulsedSlot = spellLevel;
-        setTimeout(() => {
-          this.pulsedSlot = null;
-        }, 600);
-      } finally {
-        this.loading = false;
+      const prev = this.session;
+      const newRemaining = [...this.session.slots_remaining];
+      newRemaining[spellLevel - 1] = Math.max(0, newRemaining[spellLevel - 1] - 1);
+      this.session = { ...this.session, slots_remaining: newRemaining };
+      this.pulsedSlot = spellLevel;
+      setTimeout(() => { this.pulsedSlot = null; }, 600);
+      if (newRemaining[spellLevel - 1] === 0) {
+        this.flash(`Slots de nível ${spellLevel} esgotados!`, 'warning');
       }
+
+      const r = await fetch(`/classes/${this.classSlug}/cast`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ spell_level: spellLevel }),
+      });
+      if (!r.ok) {
+        this.session = prev;
+        this.saveLocal();
+        const err = await r.json().catch(() => ({}));
+        this.flash(err.error || 'Falha ao conjurar');
+        return;
+      }
+      this.session = await r.json();
+      this.saveLocal();
     },
 
     async longRest() {
-      this.loading = true;
-      try {
-        const r = await fetch(`/classes/${this.classSlug}/long-rest`, {
-          method: 'POST',
-        });
-        if (!r.ok) {
-          this.flash((await r.json()).error || 'Long rest failed');
-          return;
-        }
-        this.session = await r.json();
+      const prev = this.session;
+      this.session = { ...this.session, slots_remaining: [...this.session.max_slots] };
+      this.pulsedSlot = 'all';
+      setTimeout(() => { this.pulsedSlot = null; }, 600);
+      this.saveLocal();
+
+      const r = await fetch(`/classes/${this.classSlug}/long-rest`, { method: 'POST' });
+      if (!r.ok) {
+        this.session = prev;
         this.saveLocal();
-        this.pulsedSlot = 'all';
-        setTimeout(() => {
-          this.pulsedSlot = null;
-        }, 600);
-      } finally {
-        this.loading = false;
+        const err = await r.json().catch(() => ({}));
+        this.flash(err.error || 'Falha no descanso longo');
+        return;
       }
+      this.session = await r.json();
+      this.saveLocal();
     },
+
     async shortRest() {
-      this.loading = true;
-      try {
-        const r = await fetch(`/classes/${this.classSlug}/short-rest`, {
-          method: 'POST',
-        });
-        if (!r.ok) {
-          this.flash((await r.json()).error || 'Short rest failed');
-          return;
-        }
-        this.session = await r.json();
+      const prev = this.session;
+      this.session = { ...this.session, slots_remaining: [...this.session.max_slots] };
+      this.pulsedSlot = 'all';
+      setTimeout(() => { this.pulsedSlot = null; }, 600);
+      this.saveLocal();
+
+      const r = await fetch(`/classes/${this.classSlug}/short-rest`, { method: 'POST' });
+      if (!r.ok) {
+        this.session = prev;
         this.saveLocal();
-        this.pulsedSlot = 'all';
-        setTimeout(() => {
-          this.pulsedSlot = null;
-        }, 600);
-      } finally {
-        this.loading = false;
+        const err = await r.json().catch(() => ({}));
+        this.flash(err.error || 'Falha no descanso curto');
+        return;
       }
+      this.session = await r.json();
+      this.saveLocal();
     },
 
     async toggleAtHand(spell) {
@@ -241,6 +251,25 @@ function app() {
       } catch {
         this.flash('Não foi possível copiar o link');
       }
+    },
+
+    startWithUndo(message, callback) {
+      clearTimeout(this.undoTimer);
+      this.undoPending = true;
+      this.toast = message;
+      this.toastKind = 'warning';
+      clearTimeout(this.toastTimer);
+      this.undoTimer = setTimeout(() => {
+        this.undoPending = false;
+        this.toast = '';
+        callback();
+      }, 2500);
+    },
+
+    cancelUndo() {
+      clearTimeout(this.undoTimer);
+      this.undoPending = false;
+      this.toast = '';
     },
 
     flash(msg, kind = 'error') {
@@ -327,42 +356,5 @@ function app() {
       }
     },
 
-    async rehydrate() {
-      if (this.session.level !== null) return;
-      const saved = this.loadLocal();
-      if (!saved || saved.level == null) return;
-
-      const r = await fetch(`/classes/${this.classSlug}/session`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ level: saved.level }),
-      });
-      if (!r.ok) return;
-      this.session = await r.json();
-
-      for (let i = 0; i < 9; i++) {
-        const consumed =
-          (saved.max_slots?.[i] ?? 0) - (saved.slots_remaining?.[i] ?? 0);
-        for (let n = 0; n < consumed; n++) {
-          const cr = await fetch(`/classes/${this.classSlug}/cast`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ spell_level: i + 1 }),
-          });
-          if (cr.ok) this.session = await cr.json();
-        }
-      }
-
-      for (const slug of saved.at_hand || []) {
-        const hr = await fetch(`/classes/${this.classSlug}/at-hand`, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ spell_slug: slug }),
-        });
-        if (hr.ok) this.session = await hr.json();
-      }
-
-      this.saveLocal();
-    },
   };
 }
