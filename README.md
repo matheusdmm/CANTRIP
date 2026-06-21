@@ -23,15 +23,11 @@ configuration) instead of localhost.
 
 ## Regenerating the spell dataset
 
-`priv/spells.json` is generated from the Player's Handbook HTML — you need your own
-legally obtained copy in `test/` to run this:
+`priv/spells.json` is generated from the Player's Handbook HTML — you need your own copy in `test/` to run this if you wish to update to a specific version OR to add more spells:
 
 ```sh
 python scripts/parse_phb.py
 ```
-
-Most contributors won't need this; the generated `priv/spells.json` is already
-checked in.
 
 ## Endpoints
 
