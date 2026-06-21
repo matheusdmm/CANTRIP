@@ -401,6 +401,30 @@ pub fn session_short_rest_without_level_errors_test() {
   session.short_rest(handle, "mago") |> should.be_error()
 }
 
+pub fn session_long_rest_clears_concentration_test() {
+  let assert Ok(handle) = session.start()
+  let assert Ok(_) = session.set_level(handle, "mago", 5)
+  let _ = session.set_concentration(handle, "mago", Some("bola-de-fogo"))
+  let assert Ok(s) = session.long_rest(handle, "mago")
+  s.concentrating |> should.equal(None)
+}
+
+pub fn session_short_rest_clears_concentration_bruxo_test() {
+  let assert Ok(handle) = session.start()
+  let assert Ok(_) = session.set_level(handle, "bruxo", 5)
+  let _ = session.set_concentration(handle, "bruxo", Some("bola-de-fogo"))
+  let assert Ok(s) = session.short_rest(handle, "bruxo")
+  s.concentrating |> should.equal(None)
+}
+
+pub fn session_short_rest_clears_concentration_non_bruxo_test() {
+  let assert Ok(handle) = session.start()
+  let assert Ok(_) = session.set_level(handle, "mago", 5)
+  let _ = session.set_concentration(handle, "mago", Some("bola-de-fogo"))
+  let assert Ok(s) = session.short_rest(handle, "mago")
+  s.concentrating |> should.equal(None)
+}
+
 pub fn session_add_at_hand_test() {
   let assert Ok(handle) = session.start()
   let s = session.add_at_hand(handle, "mago", "bola-de-fogo")

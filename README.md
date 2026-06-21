@@ -1,31 +1,37 @@
 # CANTRIP
 
-D&D 5.5e spell reference and at-hand tracker for caster classes.
+A digital spell tracker for D&D 5.5e. Pick your class and level, see which spells
+you can cast, and keep track of used spell slots and "at hand" (prepared) spells
+during a session — no more flipping through the book at the table. Interface is
+in Brazilian Portuguese.
 
-Built in Gleam on the BEAM (Erlang VM). single-file Alpine.js dashboard served from the same Gleam server.
+Under the hood: a Gleam server (runs on the Erlang VM) serving a JSON API plus a
+single self-contained HTML page (Alpine.js, no build step) as the frontend.
 
 ## Running locally
 
-You will need to have a `.env` file, use the .env.example as basis.
-
-This needs to be setup, otherwise it will run on 0.0.0.0:8080 and pick the configuration for docker.
-
-After that, just launch with `gleam run`.
+Requires [Gleam](https://gleam.run) installed.
 
 ```sh
-gleam run    # starts the server on http://localhost:8080
-gleam test   # runs the test suite
+cp .env.example .env   # defaults to http://127.0.0.1:8080
+gleam run               # starts the server
+gleam test              # runs the test suite
 ```
+
+Without a `.env` file, the server falls back to `0.0.0.0:8080` (the Docker/production
+configuration) instead of localhost.
 
 ## Regenerating the spell dataset
 
-You need to have bought the Players Hand Book in HTML OR PDF format if you need to regenerate it for some reason.
-
-`priv/spells.json` is parsed from the PHB HTML in `test/`:
+`priv/spells.json` is generated from the Player's Handbook HTML — you need your own
+legally obtained copy in `test/` to run this:
 
 ```sh
 python scripts/parse_phb.py
 ```
+
+Most contributors won't need this; the generated `priv/spells.json` is already
+checked in.
 
 ## Endpoints
 

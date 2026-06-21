@@ -139,7 +139,12 @@ fn handle_message(state: State, msg: Msg) -> actor.Next(State, Msg) {
           actor.continue(state)
         }
         Some(_) -> {
-          let restored = Session(..session, slots_remaining: session.max_slots)
+          let restored =
+            Session(
+              ..session,
+              slots_remaining: session.max_slots,
+              concentrating: None,
+            )
           process.send(reply, Ok(restored))
           actor.continue(put(state, class, restored))
         }
@@ -154,13 +159,19 @@ fn handle_message(state: State, msg: Msg) -> actor.Next(State, Msg) {
           actor.continue(state)
         }
         Some(_), True -> {
-          let restored = Session(..session, slots_remaining: session.max_slots)
+          let restored =
+            Session(
+              ..session,
+              slots_remaining: session.max_slots,
+              concentrating: None,
+            )
           process.send(reply, Ok(restored))
           actor.continue(put(state, class, restored))
         }
         Some(_), False -> {
-          process.send(reply, Ok(session))
-          actor.continue(state)
+          let restored = Session(..session, concentrating: None)
+          process.send(reply, Ok(restored))
+          actor.continue(put(state, class, restored))
         }
       }
     }
