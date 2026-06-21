@@ -9,6 +9,7 @@ function app() {
       max_slots: [0, 0, 0, 0, 0, 0, 0, 0, 0],
       slots_remaining: [0, 0, 0, 0, 0, 0, 0, 0, 0],
       at_hand: [],
+      concentrating: null,
     },
     tab: 'all',
     search: '',
@@ -62,7 +63,7 @@ function app() {
         this.expanded = {};
         this.storageSet('cantrip.activeClass', this.classSlug);
         if (this.classSlug === 'todas') {
-          this.session = { level: null, max_slots: [], slots_remaining: [], at_hand: [] };
+          this.session = { level: null, max_slots: [], slots_remaining: [], at_hand: [], concentrating: null };
         } else {
           await this.initSession();
           if (this.session.level !== null) {
@@ -99,6 +100,7 @@ function app() {
           level: saved?.level ?? null,
           slots_remaining: saved?.slots_remaining ?? null,
           at_hand: saved?.at_hand ?? null,
+          concentrating: saved?.concentrating ?? null,
         }),
       });
       if (r.ok) {
@@ -225,6 +227,32 @@ function app() {
 
     isAtHand(spell) {
       return this.session.at_hand.includes(spell.slug);
+    },
+    async setConcentration(slug) {
+      const r = await fetch(`/classes/${this.classSlug}/concentration`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ spell_slug: slug }),
+      });
+      if (r.ok) {
+        this.session = await r.json();
+        this.saveLocal();
+      }
+    },
+    toggleConcentration(spell) {
+      const wasOther = this.session.concentrating && this.session.concentrating !== spell.slug;
+      this.setConcentration(this.isConcentrating(spell) ? null : spell.slug);
+      if (wasOther) this.flash('Concentração anterior interrompida.', 'warning');
+    },
+    dropConcentration() {
+      this.setConcentration(null);
+    },
+    isConcentrating(spell) {
+      return this.session.concentrating === spell.slug;
+    },
+    get concentratingSpellName() {
+      const found = this.allSpells.find((s) => s.slug === this.session.concentrating);
+      return found ? found.name : '';
     },
     canCast(level) {
       if (level < 1 || level > 9) return false;

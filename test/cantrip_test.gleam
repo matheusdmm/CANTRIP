@@ -749,6 +749,28 @@ pub fn http_at_hand_clear_test() {
   resp.status |> should.equal(200)
 }
 
+pub fn http_concentration_set_and_drop_test() {
+  let ctx = test_ctx()
+  let resp =
+    simulate.request(http.Post, "/classes/mago/concentration")
+    |> simulate.json_body(
+      json.object([#("spell_slug", json.string("missil-magico"))]),
+    )
+    |> cantrip.handle_request(ctx)
+  resp.status |> should.equal(200)
+  simulate.read_body(resp)
+  |> string.contains("\"concentrating\":\"missil-magico\"")
+  |> should.be_true()
+
+  let resp =
+    simulate.request(http.Post, "/classes/mago/concentration")
+    |> simulate.json_body(json.object([#("spell_slug", json.null())]))
+    |> cantrip.handle_request(ctx)
+  simulate.read_body(resp)
+  |> string.contains("\"concentrating\":null")
+  |> should.be_true()
+}
+
 pub fn http_unknown_route_404_test() {
   let resp =
     simulate.request(http.Get, "/rota/inexistente")
@@ -767,6 +789,7 @@ pub fn session_restore_sets_level_test() {
       5,
       slots.SlotTable([2, 1, 0, 0, 0, 0, 0, 0, 0]),
       set.new(),
+      None,
     )
   s.level |> should.equal(Some(5))
 }
@@ -774,7 +797,7 @@ pub fn session_restore_sets_level_test() {
 pub fn session_restore_preserves_slots_remaining_test() {
   let assert Ok(handle) = session.start()
   let remaining = slots.SlotTable([2, 1, 0, 0, 0, 0, 0, 0, 0])
-  let s = session.restore(handle, "mago", 5, remaining, set.new())
+  let s = session.restore(handle, "mago", 5, remaining, set.new(), None)
   slots.count_at(s.slots_remaining, 1) |> should.equal(2)
   slots.count_at(s.slots_remaining, 2) |> should.equal(1)
   slots.count_at(s.slots_remaining, 3) |> should.equal(0)
@@ -783,7 +806,7 @@ pub fn session_restore_preserves_slots_remaining_test() {
 pub fn session_restore_max_slots_from_level_not_remaining_test() {
   let assert Ok(handle) = session.start()
   let partial = slots.SlotTable([1, 0, 0, 0, 0, 0, 0, 0, 0])
-  let s = session.restore(handle, "mago", 5, partial, set.new())
+  let s = session.restore(handle, "mago", 5, partial, set.new(), None)
   slots.count_at(s.max_slots, 1) |> should.equal(4)
   slots.count_at(s.max_slots, 2) |> should.equal(3)
   slots.count_at(s.max_slots, 3) |> should.equal(2)
@@ -792,7 +815,7 @@ pub fn session_restore_max_slots_from_level_not_remaining_test() {
 pub fn session_restore_preserves_at_hand_test() {
   let assert Ok(handle) = session.start()
   let at_hand = set.from_list(["bola-de-fogo", "escudo"])
-  let s = session.restore(handle, "mago", 5, slots.empty(), at_hand)
+  let s = session.restore(handle, "mago", 5, slots.empty(), at_hand, None)
   set.contains(s.at_hand, "bola-de-fogo") |> should.be_true()
   set.contains(s.at_hand, "escudo") |> should.be_true()
 }
@@ -800,14 +823,14 @@ pub fn session_restore_preserves_at_hand_test() {
 pub fn session_restore_unknown_class_returns_empty_test() {
   let assert Ok(handle) = session.start()
   let s =
-    session.restore(handle, "cavaleiro", 5, slots.empty(), set.new())
+    session.restore(handle, "cavaleiro", 5, slots.empty(), set.new(), None)
   s.level |> should.equal(None)
 }
 
 pub fn session_restore_persists_across_calls_test() {
   let assert Ok(handle) = session.start()
   let remaining = slots.SlotTable([1, 1, 0, 0, 0, 0, 0, 0, 0])
-  let _ = session.restore(handle, "mago", 5, remaining, set.new())
+  let _ = session.restore(handle, "mago", 5, remaining, set.new(), None)
   let s = session.get(handle, "mago")
   slots.count_at(s.slots_remaining, 1) |> should.equal(1)
 }
@@ -815,7 +838,7 @@ pub fn session_restore_persists_across_calls_test() {
 pub fn session_restore_then_cast_works_test() {
   let assert Ok(handle) = session.start()
   let remaining = slots.SlotTable([3, 2, 0, 0, 0, 0, 0, 0, 0])
-  let _ = session.restore(handle, "mago", 5, remaining, set.new())
+  let _ = session.restore(handle, "mago", 5, remaining, set.new(), None)
   let assert Ok(s) = session.cast(handle, "mago", 1)
   slots.count_at(s.slots_remaining, 1) |> should.equal(2)
 }
@@ -823,9 +846,45 @@ pub fn session_restore_then_cast_works_test() {
 pub fn session_restore_then_long_rest_resets_to_max_test() {
   let assert Ok(handle) = session.start()
   let partial = slots.SlotTable([1, 0, 0, 0, 0, 0, 0, 0, 0])
-  let _ = session.restore(handle, "mago", 5, partial, set.new())
+  let _ = session.restore(handle, "mago", 5, partial, set.new(), None)
   let assert Ok(s) = session.long_rest(handle, "mago")
   slots.count_at(s.slots_remaining, 1) |> should.equal(4)
+}
+
+pub fn session_restore_preserves_concentrating_test() {
+  let assert Ok(handle) = session.start()
+  let s =
+    session.restore(
+      handle,
+      "mago",
+      5,
+      slots.empty(),
+      set.new(),
+      Some("bola-de-fogo"),
+    )
+  s.concentrating |> should.equal(Some("bola-de-fogo"))
+}
+
+// ── session.set_concentration ───────────────────────────────────────────────
+
+pub fn session_set_concentration_test() {
+  let assert Ok(handle) = session.start()
+  let s = session.set_concentration(handle, "mago", Some("bola-de-fogo"))
+  s.concentrating |> should.equal(Some("bola-de-fogo"))
+}
+
+pub fn session_drop_concentration_test() {
+  let assert Ok(handle) = session.start()
+  let _ = session.set_concentration(handle, "mago", Some("bola-de-fogo"))
+  let s = session.set_concentration(handle, "mago", None)
+  s.concentrating |> should.equal(None)
+}
+
+pub fn session_set_concentration_replaces_previous_test() {
+  let assert Ok(handle) = session.start()
+  let _ = session.set_concentration(handle, "mago", Some("bola-de-fogo"))
+  let s = session.set_concentration(handle, "mago", Some("escudo"))
+  s.concentrating |> should.equal(Some("escudo"))
 }
 
 // ── HTTP restore endpoint ─────────────────────────────────────────────────────

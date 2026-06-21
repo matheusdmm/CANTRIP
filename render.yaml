@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: cantrip
-    runtime: docker
-    plan: free
-    region: oregon
-    healthCheckPath: /api/health
-    dockerfilePath: ./Dockerfile
-    autoDeploy: true

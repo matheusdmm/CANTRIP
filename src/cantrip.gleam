@@ -114,6 +114,9 @@ pub fn handle_request(req: wisp.Request, ctx: Context) -> wisp.Response {
     ["classes", class_slug, "at-hand", spell_slug] ->
       at_hand_delete(req, ctx, class_slug, spell_slug)
 
+    ["classes", class_slug, "concentration"] ->
+      concentration_route(req, ctx, class_slug)
+
     _ -> wisp.not_found()
   }
 }
@@ -156,14 +159,26 @@ fn restore_session(
     use level <- decode.field("level", decode.int)
     use remaining <- decode.field("slots_remaining", decode.list(decode.int))
     use at_hand <- decode.field("at_hand", decode.list(decode.string))
-    decode.success(#(level, remaining, at_hand))
+    use concentrating <- decode.optional_field(
+      "concentrating",
+      None,
+      decode.optional(decode.string),
+    )
+    decode.success(#(level, remaining, at_hand, concentrating))
   }
   case decode.run(body, decoder) {
-    Ok(#(level, remaining_list, at_hand_list)) -> {
+    Ok(#(level, remaining_list, at_hand_list, concentrating)) -> {
       let slots_remaining = slots.SlotTable(remaining_list)
       let at_hand = set.from_list(at_hand_list)
       let s =
-        session.restore(ctx.sessions, class_slug, level, slots_remaining, at_hand)
+        session.restore(
+          ctx.sessions,
+          class_slug,
+          level,
+          slots_remaining,
+          at_hand,
+          concentrating,
+        )
       ok_json(session_to_json(s))
     }
     Error(_) ->
@@ -192,20 +207,32 @@ fn init_session(
           "at_hand",
           decode.optional(decode.list(decode.string)),
         )
-        decode.success(#(level, remaining, at_hand))
+        use concentrating <- decode.optional_field(
+          "concentrating",
+          None,
+          decode.optional(decode.string),
+        )
+        decode.success(#(level, remaining, at_hand, concentrating))
       }
       case decode.run(body, decoder) {
-        Ok(#(Some(level), remaining, at_hand_list)) -> {
+        Ok(#(Some(level), remaining, at_hand_list, concentrating)) -> {
           let slots_remaining =
             slots.SlotTable(
               option.unwrap(remaining, [0, 0, 0, 0, 0, 0, 0, 0, 0]),
             )
           let at_hand = set.from_list(option.unwrap(at_hand_list, []))
           let s =
-            session.restore(ctx.sessions, class_slug, level, slots_remaining, at_hand)
+            session.restore(
+              ctx.sessions,
+              class_slug,
+              level,
+              slots_remaining,
+              at_hand,
+              concentrating,
+            )
           ok_json(session_to_json(s))
         }
-        Ok(#(None, _, _)) -> ok_json(session_to_json(current))
+        Ok(#(None, _, _, _)) -> ok_json(session_to_json(current))
         Error(_) ->
           wisp.bad_request(
             "expected { level: int|null, slots_remaining: int[]|null, at_hand: string[]|null }",
@@ -377,6 +404,29 @@ fn at_hand_clear(
   ok_json(session_to_json(s))
 }
 
+fn concentration_route(
+  req: wisp.Request,
+  ctx: Context,
+  class_slug: String,
+) -> wisp.Response {
+  use <- wisp.require_method(req, http.Post)
+  use body <- wisp.require_json(req)
+  let decoder = {
+    use spell_slug <- decode.field(
+      "spell_slug",
+      decode.optional(decode.string),
+    )
+    decode.success(spell_slug)
+  }
+  case decode.run(body, decoder) {
+    Ok(spell_slug) -> {
+      let s = session.set_concentration(ctx.sessions, class_slug, spell_slug)
+      ok_json(session_to_json(s))
+    }
+    Error(_) -> wisp.bad_request("expected { spell_slug: <string>|null }")
+  }
+}
+
 // ----- response helpers / encoders -----
 
 fn ok_json(body: json.Json) -> wisp.Response {
@@ -421,6 +471,10 @@ fn session_to_json(s: session.Session) -> json.Json {
     Some(n) -> json.int(n)
     None -> json.null()
   }
+  let concentrating_json = case s.concentrating {
+    Some(slug) -> json.string(slug)
+    None -> json.null()
+  }
   json.object([
     #("level", level_json),
     #("max_slots", slot_table_to_json(s.max_slots)),
@@ -431,6 +485,7 @@ fn session_to_json(s: session.Session) -> json.Json {
         |> list.sort(string.compare)
         |> json.array(json.string),
     ),
+    #("concentrating", concentrating_json),
   ])
 }
 

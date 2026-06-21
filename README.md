@@ -50,4 +50,4 @@ POST   /classes/:slug/at-hand/clear                    Wipe bookmarks
 
 ## Deploy
 
-`Dockerfile` + `render.yaml` deploy to Render.com.
+`Dockerfile` to deploy on Coolify and be happy :)

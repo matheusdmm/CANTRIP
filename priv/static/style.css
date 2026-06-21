@@ -712,6 +712,30 @@ button.ghost:active:not(:disabled) {
   border-color: var(--accent);
 }
 
+.bookmark.concentration.on {
+  color: var(--warning);
+  border-color: var(--warning);
+  background: transparent;
+}
+
+.bookmark.concentration.on .bookmark-dot {
+  background: var(--warning);
+  border-color: var(--warning);
+}
+
+.concentration-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--warning);
+  border-radius: var(--radius-sm);
+  color: var(--warning);
+  font-size: 13px;
+}
+
 .footer {
   margin-top: 32px;
   padding: 16px 0 24px;

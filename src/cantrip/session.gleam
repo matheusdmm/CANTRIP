@@ -18,6 +18,7 @@ pub type Session {
     max_slots: SlotTable,
     slots_remaining: SlotTable,
     at_hand: Set(String),
+    concentrating: Option(String),
   )
 }
 
@@ -45,11 +46,17 @@ type Msg {
   AddAtHand(class: String, spell_slug: String, reply: Subject(Session))
   RemoveAtHand(class: String, spell_slug: String, reply: Subject(Session))
   ClearAtHand(class: String, reply: Subject(Session))
+  SetConcentration(
+    class: String,
+    spell_slug: Option(String),
+    reply: Subject(Session),
+  )
   Restore(
     class: String,
     level: Int,
     slots_remaining: SlotTable,
     at_hand: Set(String),
+    concentrating: Option(String),
     reply: Subject(Session),
   )
 }
@@ -69,6 +76,7 @@ pub fn empty_session() -> Session {
     max_slots: slots.empty(),
     slots_remaining: slots.empty(),
     at_hand: set.new(),
+    concentrating: None,
   )
 }
 
@@ -100,6 +108,7 @@ fn handle_message(state: State, msg: Msg) -> actor.Next(State, Msg) {
               max_slots: table,
               slots_remaining: table,
               at_hand: prev.at_hand,
+              concentrating: prev.concentrating,
             )
           process.send(reply, Ok(session))
           actor.continue(put(state, class, session))
@@ -179,7 +188,14 @@ fn handle_message(state: State, msg: Msg) -> actor.Next(State, Msg) {
       actor.continue(put(state, class, updated))
     }
 
-    Restore(class, level, slots_remaining, at_hand, reply) -> {
+    SetConcentration(class, spell_slug, reply) -> {
+      let session = get_or_init(state, class)
+      let updated = Session(..session, concentrating: spell_slug)
+      process.send(reply, updated)
+      actor.continue(put(state, class, updated))
+    }
+
+    Restore(class, level, slots_remaining, at_hand, concentrating, reply) -> {
       case slots.max_slots(class, level) {
         Ok(max) -> {
           let session =
@@ -188,6 +204,7 @@ fn handle_message(state: State, msg: Msg) -> actor.Next(State, Msg) {
               max_slots: max,
               slots_remaining: slots_remaining,
               at_hand: at_hand,
+              concentrating: concentrating,
             )
           process.send(reply, session)
           actor.continue(put(state, class, session))
@@ -267,16 +284,25 @@ pub fn clear_at_hand(handle: Handle, class: String) -> Session {
   process.call(handle.subject, 100, ClearAtHand(class, _))
 }
 
+pub fn set_concentration(
+  handle: Handle,
+  class: String,
+  spell_slug: Option(String),
+) -> Session {
+  process.call(handle.subject, 100, SetConcentration(class, spell_slug, _))
+}
+
 pub fn restore(
   handle: Handle,
   class: String,
   level: Int,
   slots_remaining: SlotTable,
   at_hand: Set(String),
+  concentrating: Option(String),
 ) -> Session {
   process.call(
     handle.subject,
     100,
-    Restore(class, level, slots_remaining, at_hand, _),
+    Restore(class, level, slots_remaining, at_hand, concentrating, _),
   )
 }

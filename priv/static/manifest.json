@@ -1,0 +1,11 @@
+{
+  "name": "Cantrip — Preparador de magias do 5.5e",
+  "short_name": "Cantrip",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#090d16",
+  "theme_color": "#7c3aed",
+  "icons": [
+    { "src": "/logo.png", "sizes": "750x750", "type": "image/png" }
+  ]
+}
